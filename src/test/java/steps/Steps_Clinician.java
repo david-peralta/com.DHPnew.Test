@@ -23,7 +23,7 @@ public class Steps_Clinician extends Base {
 			webElementSendKeys(pages.getPageLogin().getInputEmailAddress(), properties.getProperty("DoctorEmail"));
 			webElementSendKeys(pages.getPageLogin().getInputUserPassword(), properties.getProperty("DoctorPassword"));
 			webElementClick(pages.getPageLogin().getButtonLogin());
-			webElementClick(pages.pageClinician().getPatientsMenubar());
+			webElementClick(pages.getPageClinician().getPatientsMenubar());
 
 		}
 		catch (AssertionError exception) {
@@ -36,13 +36,13 @@ public class Steps_Clinician extends Base {
 	public void user_clicks_on_a_specific_patient() throws Throwable {
 
 		try {
-			webElementClick(pages.pageClinician().getPatientSearchField());
-			waitUntilWebElementVisible(pages.pageClinician().getPatientSearchField());
-			webElementSendKeys(pages.pageClinician().getPatientSearchField(), properties.getProperty("PatientFirstName"));
-			webElementClick(pages.pageClinician().getSearchButton());
+			webElementClick(pages.getPageClinician().getPatientSearchField());
+			waitUntilWebElementVisible(pages.getPageClinician().getPatientSearchField());
+			webElementSendKeys(pages.getPageClinician().getPatientSearchField(), properties.getProperty("PatientFirstName"));
+			webElementClick(pages.getPageClinician().getSearchButton());
 			Thread.sleep(5000);
-			waitUntilWebElementVisible(pages.pageClinician().getDemethPatientLink());
-			webElementClick(pages.pageClinician().getDemethPatientLink());
+			waitUntilWebElementVisible(pages.getPageClinician().getDemethPatientLink());
+			webElementClick(pages.getPageClinician().getDemethPatientLink());
 
 		}
 		catch (Exception exception) {
@@ -54,8 +54,8 @@ public class Steps_Clinician extends Base {
 	@When("^clicks on appointments tab$")
 	public void clicks_on_appointments_tab() throws Throwable {
 		try {
-			waitUntilWebElementVisible(pages.pageClinician().getPatientNameLabel());
-			webElementClick(pages.pageClinician().getAppointmentsTab());
+			waitUntilWebElementVisible(pages.getPageClinician().getPatientNameLabel());
+			webElementClick(pages.getPageClinician().getAppointmentsTab());
 		}
 		catch (Exception exception) {
 			throw new Exception("Unable to locate Appointments tab." + "\n" + exception.getMessage());
@@ -66,13 +66,13 @@ public class Steps_Clinician extends Base {
 	@Then("^the clinician see the following four tabs under the patient's profile$")
 	public void the_clinician_see_the_following_four_tabs_under_the_patient_s_profile() throws Throwable {
 		try {
-			waitUntilWebElementVisible(pages.pageClinician().getPatientNameLabel());
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getDefaultTab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getBasicInfoTab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getMedicalInfoTab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getPSATab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getAppointmentsTab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getNotesTab()));
+			waitUntilWebElementVisible(pages.getPageClinician().getPatientNameLabel());
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getDefaultTab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getBasicInfoTab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getMedicalInfoTab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getPSATab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getAppointmentsTab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getNotesTab()));
 
 		}
 		catch (AssertionError exception) {
@@ -83,7 +83,7 @@ public class Steps_Clinician extends Base {
 	@Then("^the assesstment table on appointments tab is hidden$")
 	public void the_assesstment_table_on_appointments_tab_is_hidden() throws Throwable {
 		try {
-			assertFalse(isWebElementDisplayed(pages.pageClinician().getAssesstmentOnAppointmentsTabGraph()));
+			assertFalse(isWebElementDisplayed(pages.getPageClinician().getAssesstmentOnAppointmentsTabGraph()));
 
 		}
 		catch (AssertionError exception) {
@@ -94,13 +94,13 @@ public class Steps_Clinician extends Base {
 	@Then("^the clinician see the following three tabs under the patient's profile$")
 	public void the_clinician_see_the_following_three_tabs_under_the_patient_s_profile() throws Throwable {
 		try {
-			waitUntilWebElementVisible(pages.pageClinician().getPatientNameLabel());
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getDefaultTab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getBasicInfoTab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getMedicalInfoTab()));
-			assertFalse(isWebElementDisplayed(pages.pageClinician().getPSATab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getAppointmentsTab()));
-			assertTrue(isWebElementDisplayed(pages.pageClinician().getNotesTab()));
+			waitUntilWebElementVisible(pages.getPageClinician().getPatientNameLabel());
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getDefaultTab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getBasicInfoTab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getMedicalInfoTab()));
+			assertFalse(isWebElementDisplayed(pages.getPageClinician().getPSATab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getAppointmentsTab()));
+			assertTrue(isWebElementDisplayed(pages.getPageClinician().getNotesTab()));
 
 		}
 		catch (AssertionError exception) {

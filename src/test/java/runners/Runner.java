@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 	// Specify which folder or file to check.
 	features = "src\\test\\resources\\features\\",
 	// Comment tags for easy change.
-	tags = { "@DHP5" })
+	tags = { "@Regression" })
 // tags = { "@Regression", "~@WIP" })
 // tags = { "@ModuleUsers" })
 // tags = { "@WIP" })
