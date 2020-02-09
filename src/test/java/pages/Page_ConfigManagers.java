@@ -1,16 +1,16 @@
 package pages;
 
-import helpers.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import helpers.Base;
 
 public class Page_ConfigManagers extends Base {
 	public Page_ConfigManagers() {
 		PageFactory.initElements(webDriver, this);
 	}
 
-	// ############### DHP Reborn ###############
+	// ############################################## Page Objects ###############################################
 	@FindBy(xpath = "//div[text()='Settings']")
 	private WebElement menubar_Settings;
 	@FindBy(xpath = "//div[text()='Admin']")
@@ -67,105 +67,118 @@ public class Page_ConfigManagers extends Base {
 	private WebElement button_UnsaveChangespopupYes;
 	@FindBy(xpath = "//span[text()='Clinician managers']")
 	private WebElement label_ClinicianManager;
-	
-	
-	
-	
-	
-	
-	
 
-	// ############### DHP Reborn ###############
-	// ############## Page Objects ##############
+	// ############################################## Return Page Objects ###############################################
 	public WebElement getUnsaveChangespopupLabel() {
 		return label_UnsaveChangespopup;
 	}
+
 	public WebElement getlabelClinicianManager() {
 		return label_ClinicianManager;
 	}
-	
+
 	public WebElement getUnsaveChangespopupButtonYES() {
 		return button_UnsaveChangespopupYes;
 	}
+
 	public WebElement getUnsaveChangespopupButtonNO() {
 		return button_UnsaveChangespopupNo;
 	}
+
 	public WebElement getCreationSuccesspopupLabel() {
 		return label_CreationSuccesspopup;
 	}
+
 	public WebElement getCreationSuccesspopupButton() {
 		return button_CreationSuccesspopup;
 	}
-	
+
 	public WebElement getEmptyCreateAdmiEmailValidation() {
 		return validation_EmptyCreateAdmiEmail;
 	}
+
 	public WebElement getEmptyCreateAdminLastNameValidation() {
 		return validation_EmptyCreateAdminLastName;
 	}
+
 	public WebElement getEmptyCreateAdminFirstNameValidation() {
 		return validation_EmptyCreateAdminFirstName;
 	}
-	
+
 	public WebElement getCreateAdminLastNameField() {
 		return field_CreateAdminLastName;
 	}
-	
+
 	public WebElement getCreateAdminEmailField() {
 		return field_CreateAdminEmail;
 	}
+
 	public WebElement getCreateAdminFirstNameField() {
 		return field_CreateAdminFirstName;
 	}
+
 	public WebElement getCreateAdminConfigManagerButton() {
 		return button_CreateAdminConfigManager;
 	}
+
 	public WebElement getCancelAdminConfigManagerButton() {
 		return button_CancelAdminConfigManager;
 	}
+
 	public WebElement getcolumnEmailLabel() {
 		return label_columnEmail;
 	}
+
 	public WebElement getcolumnStatusLabel() {
 		return label_columnStatus;
 	}
+
 	public WebElement getcolumnLastNameLabel() {
 		return label_columnLastName;
 	}
+
 	public WebElement getcolumnFirstNameLabel() {
 		return label_columnFirstName;
 	}
-	
+
 	public WebElement getProfileMenuCaretDownIcon() {
 		return caretDownIcon_ProfileMenu;
 	}
+
 	public WebElement getProfileNameWelcome() {
 		return label_WelcomeProfileName;
 	}
+
 	public WebElement getProfileMenuButton() {
 		return button_ProfileMenu;
 	}
+
 	public WebElement getProfileMenuLogoutLink() {
 		return link_ProfileMenuLogout;
 	}
+
 	public WebElement getYesMeLogout() {
 		return button_YesMeLogout;
 	}
+
 	public WebElement getCancelLogout() {
 		return button_CancelLogout;
 	}
+
 	public WebElement getMenubarSettings() {
 		return menubar_Settings;
 	}
+
 	public WebElement getMenubarAdmin() {
 		return menubar_Admin;
 	}
+
 	public WebElement getMenubarContentful() {
 		return menubar_Contentful;
 	}
+
 	public WebElement getMenubarLogout() {
 		return menubar_Logout;
 	}
 
-	
 }

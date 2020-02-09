@@ -1,16 +1,16 @@
 package pages;
 
-import helpers.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import helpers.Base;
 
 public class Page_MyInfo extends Base {
 	public Page_MyInfo() {
 		PageFactory.initElements(webDriver, this);
 	}
 
-	// ############### DHP Reborn ###############
+	// ################################################## Page Objects ##################################################
 	@FindBy(xpath = "(//select[contains(@id,'LIFEEVENTTYPEID')])[1]")
 	private WebElement dropdown_InfoType;
 	@FindBy(xpath = "(//label[text()='Info Type'])[1]")
@@ -39,55 +39,86 @@ public class Page_MyInfo extends Base {
 	private WebElement getWellnessCheckTabOnMyInfoPage;
 	@FindBy(xpath = "(//span[text()='My Info']//following::div//span[text()='PSA'])[1]")
 	private WebElement getPSATabOnMyInfoPage;
-	
-	
-	
 
-	// ############### DHP Reborn ###############
-	// ############## Page Objects ##############
+	@FindBy(xpath = "//img[contains(@src,'data:image/jpg;base64,iVBOR')]")
+	private WebElement image_Logo;
+
+	// Links - Footer
+	@FindBy(xpath = "//img[contains(@src,'data:image/jpg;base64,iVBOR')]")
+	private WebElement link_AboutUs;
+	@FindBy(xpath = "//a[contains(text(),'Copyright and Disclaimer')]")
+	private WebElement link_CopyRightAndDisclaimer;
+	@FindBy(xpath = "//a[contains(text(),'Privacy')]")
+	private WebElement link_Privacy;
+	@FindBy(xpath = "//a[contains(text(),'Terms and Condition')]")
+	private WebElement link_TermsAndCondition;
+	@FindBy(xpath = "//a[contains(text(),'Contact Us')]")
+	private WebElement link_ContactUs;
+	@FindBy(xpath = "//a[contains(text(),'DB Results')]")
+	private WebElement link_DBResults;
+
+	// ################################################## Return Page Objects ##################################################
 	public WebElement getPSATabOnMyInfoPage() {
 		return getPSATabOnMyInfoPage;
 	}
+
 	public WebElement getWellnessCheckTabOnMyInfoPage() {
 		return getWellnessCheckTabOnMyInfoPage;
 	}
-	
+
 	public WebElement getWellnessCheckQuestion1() {
 		return label_WellnessCheckQuestion1;
 	}
+
 	public WebElement getWellnessCheckQuestion1Updated() {
 		return label_WellnessCheckQuestion1Updated;
 	}
+
 	public WebElement getWellnessCheckQuestion2() {
 		return label_WellnessCheckQuestion2;
 	}
+
 	public WebElement getWellnessCheckQuestion3() {
 		return label_WellnessCheckQuestion3;
 	}
+
 	public WebElement getWellnessCheckQuestion4() {
 		return label_WellnessCheckQuestion4;
 	}
+
 	public WebElement getWellnessCheckQuestion5() {
 		return label_WellnessCheckQuestion4;
 	}
-	
+
 	public WebElement getStartWellnessCheckbutton() {
 		return button_StartWellnessCheck;
 	}
+
 	public WebElement getTimelineTab() {
 		return tab_Timeline;
 	}
+
 	public WebElement getWellnessCheckTab() {
 		return tab_WellnessCheck;
 	}
+
 	public WebElement getLabelInfoType() {
 		return label_InfoType;
 	}
+
 	public WebElement getButtonAddInfo() {
 		return button_AddInfo;
 	}
 
 	public WebElement getDropdownInfoType() {
 		return dropdown_InfoType;
+	}
+
+	public WebElement getImageLogo() {
+		return image_Logo;
+	}
+
+	public WebElement getLinkContactUs() {
+		return link_ContactUs;
 	}
 }

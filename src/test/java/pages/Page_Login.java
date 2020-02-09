@@ -1,16 +1,16 @@
 package pages;
 
-import helpers.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import helpers.Base;
 
 public class Page_Login extends Base {
 	public Page_Login() {
 		PageFactory.initElements(webDriver, this);
 	}
 
-	// ############### DHP Reborn ###############
+	// ############################################## Page Objects ###############################################
 	@FindBy(xpath = "//input[@value = 'Register']")
 	private WebElement button_RegisterButton;
 	@FindBy(xpath = "//input[@value = 'Login']")
@@ -27,37 +27,32 @@ public class Page_Login extends Base {
 	private WebElement input_ValidatedEmptyUserPassword;
 	@FindBy(xpath = "//span[text()='Password is incorrect. Please try again.']")
 	private WebElement input_ValidatedInvalidUserPassword;
-	
-	
-	
-	
 	@FindBy(xpath = "//span[contains(text(),'Forgot password?')]")
 	private WebElement link_ForgotPassword;
 	@FindBy(xpath = "//input[contains(@id,'PasswordInput') and @type = 'password']")
 	private WebElement masked_Password;
-	
-	
-	
 
-
-	// ############### DHP Reborn ###############
-	// ############## Page Objects ##############
+	// ############################################## Return Page Objects ###############################################
 	public WebElement getValidatedInvalidUserPassword() {
 		return input_ValidatedInvalidUserPassword;
 	}
+
 	public WebElement getValidatedInvalidEmailAddress() {
 		return input_ValidatedInvalidEmailAddress;
 	}
-	
+
 	public WebElement getValidatedEmptyUserPassword() {
 		return input_ValidatedEmptyUserPassword;
 	}
+
 	public WebElement getValidatedEmptyEmailAddress() {
 		return input_ValidatedEmptyEmailAddress;
 	}
+
 	public WebElement getIfPasswordFieldisMasked() {
 		return masked_Password;
 	}
+
 	public WebElement getButtonRegister() {
 		return button_RegisterButton;
 	}
@@ -73,6 +68,7 @@ public class Page_Login extends Base {
 	public WebElement getButtonLogin() {
 		return button_LoginButton;
 	}
+
 	public WebElement getForgotPasswordlink() {
 		return link_ForgotPassword;
 	}

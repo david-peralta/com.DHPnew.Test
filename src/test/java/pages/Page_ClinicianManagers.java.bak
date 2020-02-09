@@ -1,12 +1,13 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import helpers.Base;
 
-public class Page_Clinician extends Base {
-	public Page_Clinician() {
+public class Page_ClinicianManagers extends Base {
+	public Page_ClinicianManagers() {
 		PageFactory.initElements(webDriver, this);
 	}
 
@@ -37,7 +38,7 @@ public class Page_Clinician extends Base {
 
 	@FindBy(xpath = "//div[contains(text(),' Change Password')]//parent::a")
 	private WebElement link_ChangePassword;
-
+	
 	@FindBy(xpath = "//div[text()='Patients']")
 	private WebElement menubar_Patients;
 	@FindBy(xpath = "//a[text()='demeth']")
@@ -54,24 +55,36 @@ public class Page_Clinician extends Base {
 		return header_ClinicianManagers;
 	}
 
-	public WebElement getPatientsMenubar() {
-		return menubar_Patients;
+	public WebElement getButtonCancel() {
+		return button_Cancel;
 	}
 
-	public WebElement getSearchButton() {
-		return button_Search;
+	public WebElement getActiveUser() {
+		return label_ActiveUser;
 	}
 
-	public WebElement getResetButton() {
-		return button_Reset;
+	public WebElement getDeactivatedUser() {
+		return label_DeactivatedUser;
 	}
 
-	public WebElement getPatientSearchField() {
-		return field_Search;
+	public WebElement getLabelClinicianManager() {
+		return link_ClinicianManager;
 	}
 
-	public WebElement getDemethPatientLink() {
-		return link_DemethPatient;
+	public WebElement getLinkFilterStatus() {
+		return link_FilterStatus;
+	}
+
+	public WebElement getButtonCreate() {
+		return button_Create;
+	}
+
+	public WebElement getImageUserAccount() {
+		return image_UserAccount;
+	}
+
+	public WebElement getLinkChangePassword() {
+		return link_ChangePassword;
 	}
 
 }

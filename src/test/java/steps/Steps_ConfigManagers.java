@@ -1,11 +1,7 @@
 package steps;
 
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -16,8 +12,7 @@ public class Steps_ConfigManagers extends Base {
 	Pages pages = new Pages();
 	Steps steps = new Steps();
 
-	// ################################################## Given Steps
-	// ##################################################
+	// ################################################## Given Steps ##################################################
 	@Given("^the user is on configuration managers landing page$")
 	public void the_user_is_on_configuration_managers_landing_page() throws Throwable {
 		try {
@@ -25,27 +20,35 @@ public class Steps_ConfigManagers extends Base {
 			launchURL(properties.getProperty("url"));
 			webElementClick(pages.getPageHome().getLogInButton());
 			Thread.sleep(5000);
-			webElementSendKeys(pages.getPageLogin().getInputEmailAddress(),
-					properties.getProperty("ConfigManagerEmail"));
-			webElementSendKeys(pages.getPageLogin().getInputUserPassword(),
-					properties.getProperty("ConfigManagerPassword"));
+			webElementSendKeys(pages.getPageLogin().getInputEmailAddress(), properties.getProperty("ConfigManagerEmail"));
+			webElementSendKeys(pages.getPageLogin().getInputUserPassword(), properties.getProperty("ConfigManagerPassword"));
 			webElementClick(pages.getPageLogin().getButtonLogin());
-//			waitUntilWebElementVisible(pages.getpage);
-//			assert.assertEquals(getPageTitle(), actual);
-		} catch (AssertionError exception) {
-			throw new AssertionError(
-					"Cannot proceed to clinicians manager landing page." + "\n" + exception.getMessage());
+			// waitUntilWebElementVisible(pages.getpage);
+			// assert.assertEquals(getPageTitle(), actual);
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("Cannot proceed to clinicians manager landing page." + "\n" + exception.getMessage());
 		}
 	}
 
-	// ################################################## When Steps
-	// ###################################################
+	// ################################################## When Steps ###################################################
+	@When("^they click on the last name of Clinician Manager that they want to edit$")
+	public void they_click_on_the_last_name_of_Clinician_Manager_that_they_want_to_edit() throws Throwable {
+		try {
+			webElementClick(pages.pageConfigManagers().getAlastNameLabel());
+			
+		} catch (Exception exception) {
+			throw new Exception("Unable to locate clinician A lastname." + "\n" + exception.getMessage());
+		}
+	}
+	
 	@When("^user clicks on settings menubar$")
 	public void user_clicks_on_settings_menubar() throws Throwable {
 		try {
 			webElementClick(pages.pageConfigManagers().getMenubarSettings());
 			Thread.sleep(5000);
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate settings menubar." + "\n" + exception.getMessage());
 		}
 	}
@@ -55,9 +58,18 @@ public class Steps_ConfigManagers extends Base {
 		try {
 			webElementClick(pages.pageConfigManagers().getMenubarAdmin());
 			Thread.sleep(5000);
-		} catch (Exception exception) {
-			throw new Exception("Unable to locate admin menubar." + "\n" + exception.getMessage());
 		}
+		catch (Exception exception) {
+			throw new Exception("Unable to locate admin menubar." + "\n" + exception.getMessage());
+	@When("^they click on the last name of Clinician Manager that they want to edit$")
+	public void they_click_on_the_last_name_of_Clinician_Manager_that_they_want_to_edit() throws Throwable {
+		try {
+			webElementClick(pages.pageConfigManagers().getAlastNameLabel());
+			
+		} catch (Exception exception) {
+			throw new Exception("Unable to locate clinician A lastname." + "\n" + exception.getMessage());
+		}
+		
 	}
 
 	@When("^user clicks on create admin button inside the admin creation page$")
@@ -65,7 +77,8 @@ public class Steps_ConfigManagers extends Base {
 		try {
 			webElementClick(pages.pageConfigManagers().getCreateAdminConfigManagerButton());
 			waitUntilWebElementVisible(pages.pageConfigManagers().getCreateAdminEmailField());
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate create admin button." + "\n" + exception.getMessage());
 		}
 	}
@@ -75,7 +88,8 @@ public class Steps_ConfigManagers extends Base {
 		try {
 			webElementClick(pages.pageConfigManagers().getCancelAdminConfigManagerButton());
 			waitUntilWebElementVisible(pages.pageConfigManagers().getUnsaveChangespopupLabel());
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate cancel button." + "\n" + exception.getMessage());
 		}
 	}
@@ -84,7 +98,8 @@ public class Steps_ConfigManagers extends Base {
 	public void user_clicks_no_on_prompt_message_for_unsaved_changes() throws Throwable {
 		try {
 			webElementClick(pages.pageConfigManagers().getUnsaveChangespopupButtonNO());
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate no  button." + "\n" + exception.getMessage());
 		}
 	}
@@ -93,7 +108,8 @@ public class Steps_ConfigManagers extends Base {
 	public void user_clicks_yes_on_prompt_message_for_unsaved_changes() throws Throwable {
 		try {
 			webElementClick(pages.pageConfigManagers().getUnsaveChangespopupButtonYES());
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate yes button." + "\n" + exception.getMessage());
 		}
 	}
@@ -115,13 +131,14 @@ public class Steps_ConfigManagers extends Base {
 			webElementSendKeys(pages.pageConfigManagers().getCreateAdminEmailField(), Email);
 			webElementClick(pages.pageConfigManagers().getCreateAdminConfigManagerButton());
 			waitUntilWebElementVisible(pages.pageConfigManagers().getCreationSuccesspopupButton());
-			
-			//assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getCreationSuccesspopupLabel()));
+
+			// assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getCreationSuccesspopupLabel()));
 			// switchFrameByXPath("//span[text()='Account successfully created.']");
 
 			webElementClick(pages.pageConfigManagers().getCreationSuccesspopupButton());
 
-		} catch (AssertionError exception) {
+		}
+		catch (AssertionError exception) {
 			throw new AssertionError("Unable to create administrator." + "\n" + exception.getMessage());
 		}
 	}
@@ -138,7 +155,8 @@ public class Steps_ConfigManagers extends Base {
 			webElementSendKeys(pages.pageConfigManagers().getCreateAdminFirstNameField(), FirstName);
 			webElementClick(pages.pageConfigManagers().getCancelAdminConfigManagerButton());
 
-		} catch (AssertionError exception) {
+		}
+		catch (AssertionError exception) {
 			throw new AssertionError("Unable to create administrator." + "\n" + exception.getMessage());
 		}
 	}
@@ -148,7 +166,8 @@ public class Steps_ConfigManagers extends Base {
 		try {
 			webElementClick(pages.pageConfigManagers().getCancelAdminConfigManagerButton());
 			Thread.sleep(5000);
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate create admin button." + "\n" + exception.getMessage());
 		}
 	}
@@ -158,7 +177,8 @@ public class Steps_ConfigManagers extends Base {
 		try {
 			webElementClick(pages.pageConfigManagers().getCreateAdminConfigManagerButton());
 			Thread.sleep(5000);
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate create admin button." + "\n" + exception.getMessage());
 		}
 	}
@@ -172,7 +192,8 @@ public class Steps_ConfigManagers extends Base {
 			webElementClick(pages.pageConfigManagers().getYesMeLogout());
 			Thread.sleep(1000);
 			webDriver.quit();
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate logout menubar." + "\n" + exception.getMessage());
 		}
 	}
@@ -185,14 +206,14 @@ public class Steps_ConfigManagers extends Base {
 			switchFrameByXPath("//input[contains(@id,'Button_Yes')]");
 			webElementClick(pages.pageConfigManagers().getYesMeLogout());
 			Thread.sleep(1000);
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate logout menubar." + "\n" + exception.getMessage());
 		}
 	}
 
 	@When("^user logsout the configuration managers page using profile menu without closing the browser$")
-	public void user_logsout_the_configuration_managers_page_using_profile_menu_without_closing_the_browser()
-			throws Throwable {
+	public void user_logsout_the_configuration_managers_page_using_profile_menu_without_closing_the_browser() throws Throwable {
 		try {
 
 			webElementClick(pages.pageConfigManagers().getProfileMenuButton());
@@ -202,13 +223,23 @@ public class Steps_ConfigManagers extends Base {
 			switchFrameByXPath("//input[contains(@id,'Button_Yes')]");
 			webElementClick(pages.pageConfigManagers().getYesMeLogout());
 			Thread.sleep(1000);
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate logout on profile menu." + "\n" + exception.getMessage());
 		}
 	}
 
-	// ################################################## Then Steps
-	// ###################################################
+	// ################################################## Then Steps ###################################################
+	@Then("^they will be taken to the EDIT Clinician Manager page with First name, Last name, email fields$")
+	public void they_will_be_taken_to_the_EDIT_Clinician_Manager_page_with_First_name_Last_name_email_fields() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.pageConfigManagers().getEditClinicianManagerLabel());
+			assertEquals("Clinician Manager Details", getPageTitle());
+		
+		} catch (AssertionError exception) {
+			throw new AssertionError("validations on required field is missing" + "\n" + exception.getMessage());
+		}
+	}
 
 	@Then("^user sees validations on all required fields$")
 	public void user_sees_validations_on_all_required_fields() throws Throwable {
@@ -217,7 +248,8 @@ public class Steps_ConfigManagers extends Base {
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getEmptyCreateAdminFirstNameValidation()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getEmptyCreateAdminLastNameValidation()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getEmptyCreateAdmiEmailValidation()));
-		} catch (AssertionError exception) {
+		}
+		catch (AssertionError exception) {
 			throw new AssertionError("validations on required field is missing" + "\n" + exception.getMessage());
 		}
 	}
@@ -229,9 +261,9 @@ public class Steps_ConfigManagers extends Base {
 			assertTrue(isXPathNotExisting("//span[text()='Create Clinician manager']"));
 			assertFalse(isXPathNotExisting("//span[text()='Clinician managers']"));
 
-		} catch (AssertionError exception) {
-			throw new AssertionError(
-					"User is not redirected back to list of admin page" + "\n" + exception.getMessage());
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("User is not redirected back to list of admin page" + "\n" + exception.getMessage());
 		}
 	}
 
@@ -242,9 +274,9 @@ public class Steps_ConfigManagers extends Base {
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getUnsaveChangespopupButtonYES()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getUnsaveChangespopupButtonNO()));
 
-		} catch (AssertionError exception) {
-			throw new AssertionError(
-					"Prompt message for unsaved changes is not displayed" + "\n" + exception.getMessage());
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("Prompt message for unsaved changes is not displayed" + "\n" + exception.getMessage());
 		}
 	}
 
@@ -255,9 +287,9 @@ public class Steps_ConfigManagers extends Base {
 			assertFalse(!isWebElementDisplayed(pages.pageConfigManagers().getUnsaveChangespopupButtonYES()));
 			assertFalse(!isWebElementDisplayed(pages.pageConfigManagers().getUnsaveChangespopupButtonNO()));
 
-		} catch (AssertionError exception) {
-			throw new AssertionError(
-					"Prompt message for unsaved changes is still displayed" + "\n" + exception.getMessage());
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("Prompt message for unsaved changes is still displayed" + "\n" + exception.getMessage());
 		}
 	}
 
@@ -267,7 +299,8 @@ public class Steps_ConfigManagers extends Base {
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getProfileNameWelcome()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getProfileMenuCaretDownIcon()));
 
-		} catch (AssertionError exception) {
+		}
+		catch (AssertionError exception) {
 			throw new AssertionError("Profile name is not displayed" + "\n" + exception.getMessage());
 		}
 	}
@@ -279,7 +312,8 @@ public class Steps_ConfigManagers extends Base {
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getcolumnFirstNameLabel()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getcolumnEmailLabel()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getcolumnStatusLabel()));
-		} catch (AssertionError exception) {
+		}
+		catch (AssertionError exception) {
 			throw new AssertionError("Columns inside the admins table is incomplete" + "\n" + exception.getMessage());
 		}
 	}
@@ -290,9 +324,9 @@ public class Steps_ConfigManagers extends Base {
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getCreateAdminFirstNameField()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getCreateAdminLastNameField()));
 			assertTrue(isWebElementDisplayed(pages.pageConfigManagers().getCreateAdminEmailField()));
-		} catch (AssertionError exception) {
-			throw new AssertionError(
-					"Fields inside the creation of admin is incomplete" + "\n" + exception.getMessage());
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("Fields inside the creation of admin is incomplete" + "\n" + exception.getMessage());
 		}
 	}
 }

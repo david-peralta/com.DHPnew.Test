@@ -459,6 +459,8 @@ public class Steps_MyInfo extends Base {
 			throw new AssertionError("Question 1 is not updated." + "\n" + exception.getMessage());
 		}
 	}
+
+
 	
 	@Then("^checks the logo if it is displayed$")
 	public void checks_the_logo_if_it_is_displayed() throws Throwable {
