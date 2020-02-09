@@ -18,6 +18,8 @@ public class Pages extends Base {
 	private Page_ClinicianManagers page_ClinicianManagers;
 	private Page_ClinicianDetails page_ClinicianDetails;
 	private Page_ChangePassword page_ChangePassword;
+	private Page_MyPatient page_MyPatient;
+	private Page_AccountDeactivated page_AccountDeactivated;
 
 	public Page_Settings getPageSettings() {
 		return (page_Settings == null) ? page_Settings = new Page_Settings() : page_Settings;
@@ -51,7 +53,7 @@ public class Pages extends Base {
 		return (page_ClinicianManagers == null) ? page_ClinicianManagers = new Page_ClinicianManagers() : page_ClinicianManagers;
 	}
 
-	public Page_Clinician pageClinician() {
+	public Page_Clinician getPageClinician() {
 		return (page_Clinician == null) ? page_Clinician = new Page_Clinician() : page_Clinician;
 	}
 
@@ -61,6 +63,14 @@ public class Pages extends Base {
 
 	public Page_ChangePassword getPageChangePassword() {
 		return (page_ChangePassword == null) ? page_ChangePassword = new Page_ChangePassword() : page_ChangePassword;
+	}
+
+	public Page_MyPatient getPageMyPatient() {
+		return (page_MyPatient == null) ? page_MyPatient = new Page_MyPatient() : page_MyPatient;
+	}
+
+	public Page_AccountDeactivated getPageAccountDeactivated() {
+		return (page_AccountDeactivated == null) ? page_AccountDeactivated = new Page_AccountDeactivated() : page_AccountDeactivated;
 	}
 
 }

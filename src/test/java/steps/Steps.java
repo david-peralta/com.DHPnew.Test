@@ -18,6 +18,8 @@ public class Steps extends Base {
 	private Steps_ClinicianManagers steps_ClinicianManagers;
 	private Steps_ClinicianDetails steps_ClinicianDetails;
 	private Steps_ChangePassword steps_ChangePassword;
+	private Steps_MyPatient steps_MyPatient;
+	private Steps_AccountDeactivated steps_AccountDeactivated;
 
 	public Steps_Settings getStepsSettings() {
 		return (steps_Settings == null) ? steps_Settings = new Steps_Settings() : steps_Settings;
@@ -61,5 +63,13 @@ public class Steps extends Base {
 
 	public Steps_ChangePassword getStepsChangePassword() {
 		return (steps_ChangePassword == null) ? steps_ChangePassword = new Steps_ChangePassword() : steps_ChangePassword;
+	}
+
+	public Steps_MyPatient getsStepsMyPatient() {
+		return (steps_MyPatient == null) ? steps_MyPatient = new Steps_MyPatient() : steps_MyPatient;
+	}
+
+	public Steps_AccountDeactivated getsStepsAccountDeactivated() {
+		return (steps_AccountDeactivated == null) ? steps_AccountDeactivated = new Steps_AccountDeactivated() : steps_AccountDeactivated;
 	}
 }
