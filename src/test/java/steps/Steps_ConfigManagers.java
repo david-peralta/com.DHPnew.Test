@@ -1,5 +1,6 @@
 package steps;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import cucumber.api.java.en.Given;
@@ -36,12 +37,13 @@ public class Steps_ConfigManagers extends Base {
 	public void they_click_on_the_last_name_of_Clinician_Manager_that_they_want_to_edit() throws Throwable {
 		try {
 			webElementClick(pages.pageConfigManagers().getAlastNameLabel());
-			
-		} catch (Exception exception) {
+
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to locate clinician A lastname." + "\n" + exception.getMessage());
 		}
 	}
-	
+
 	@When("^user clicks on settings menubar$")
 	public void user_clicks_on_settings_menubar() throws Throwable {
 		try {
@@ -61,15 +63,7 @@ public class Steps_ConfigManagers extends Base {
 		}
 		catch (Exception exception) {
 			throw new Exception("Unable to locate admin menubar." + "\n" + exception.getMessage());
-	@When("^they click on the last name of Clinician Manager that they want to edit$")
-	public void they_click_on_the_last_name_of_Clinician_Manager_that_they_want_to_edit() throws Throwable {
-		try {
-			webElementClick(pages.pageConfigManagers().getAlastNameLabel());
-			
-		} catch (Exception exception) {
-			throw new Exception("Unable to locate clinician A lastname." + "\n" + exception.getMessage());
 		}
-		
 	}
 
 	@When("^user clicks on create admin button inside the admin creation page$")
@@ -235,8 +229,9 @@ public class Steps_ConfigManagers extends Base {
 		try {
 			waitUntilWebElementVisible(pages.pageConfigManagers().getEditClinicianManagerLabel());
 			assertEquals("Clinician Manager Details", getPageTitle());
-		
-		} catch (AssertionError exception) {
+
+		}
+		catch (AssertionError exception) {
 			throw new AssertionError("validations on required field is missing" + "\n" + exception.getMessage());
 		}
 	}

@@ -251,8 +251,7 @@ public class Steps_Settings extends Base {
 	public void user_toggles_off_health_indicator_option_on_settings_page() throws Throwable {
 
 		try {
-			if (isXPathNotExisting(
-					"//input[@value='PSA']/ancestor::tr//input[@type = 'checkbox' and @checked='checked']")) {
+			if (isXPathNotExisting("//input[@value='PSA']/ancestor::tr//input[@type = 'checkbox' and @checked='checked']")) {
 				scrollToWebElement(pages.getPageSettings().getTimelineLabel());
 				webElementClick(pages.getPageSettings().getPSAfield());
 				waitUntilWebElementVisible(pages.getPageSettings().getWellnessCheckCheckIcon());
@@ -283,8 +282,7 @@ public class Steps_Settings extends Base {
 	public void user_toggles_on_health_indicator_option_on_settings_page() throws Throwable {
 
 		try {
-			if (isXPathNotExisting(
-					"//input[@value='PSA']/ancestor::tr//input[@type = 'checkbox' and @checked='checked']")) {
+			if (isXPathNotExisting("//input[@value='PSA']/ancestor::tr//input[@type = 'checkbox' and @checked='checked']")) {
 				scrollToWebElement(pages.getPageSettings().getTimelineLabel());
 				webElementClick(pages.getPageSettings().getPSAfield());
 				waitUntilWebElementVisible(pages.getPageSettings().getWellnessCheckCheckIcon());
@@ -293,7 +291,7 @@ public class Steps_Settings extends Base {
 			}
 			Thread.sleep(5000);
 			scrollToWebElement(pages.getPageSettings().getInfoTable());
-			 if (!isXPathNotExisting("//input[contains(@id,'HealthIndicator') and @checked = 'checked']")) {
+			if (!isXPathNotExisting("//input[contains(@id,'HealthIndicator') and @checked = 'checked']")) {
 				scrollToWebElement(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 				webElementClick(pages.getPageSettings().getButtonSave());
@@ -510,7 +508,7 @@ public class Steps_Settings extends Base {
 
 	}
 
-@When("^user toggles on Enable assessment option on settings page$")
+	@When("^user toggles on Enable assessment option on settings page$")
 	public void user_toggles_on_Enable_assessment_option_on_settings_page() throws Throwable {
 		try {
 			scrollToWebElement(pages.getPageSettings().getButtonSave());
@@ -519,8 +517,9 @@ public class Steps_Settings extends Base {
 				Thread.sleep(5000);
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
-			} else {
-				
+			}
+			else {
+
 				webElementClick(pages.getPageSettings().getToggleAssessment());
 				Thread.sleep(5000);
 				scrollToWebElement(pages.getPageSettings().getButtonSave());
@@ -528,10 +527,12 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle on assessment option" + "\n" + exception.getMessage());
 		}
 	}
+
 	@When("^user toggles on Enable needs option on settings page$")
 	public void user_toggles_on_Enable_needs_option_on_settings_page() throws Throwable {
 		try {
@@ -542,10 +543,12 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off anxiety option" + "\n" + exception.getMessage());
 		}
 	}
+
 	@When("^user toggles off Enable needs option on settings page$")
 	public void user_toggles_off_Enable_needs_option_on_settings_page() throws Throwable {
 		try {
@@ -556,7 +559,8 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off anxiety option" + "\n" + exception.getMessage());
 		}
 	}
@@ -571,10 +575,12 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off anxiety option" + "\n" + exception.getMessage());
 		}
 	}
+
 	@When("^user toggles on Enable depression option on settings page$")
 	public void user_toggles_on_Enable_depression_option_on_settings_page() throws Throwable {
 		try {
@@ -585,10 +591,12 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off anxiety option" + "\n" + exception.getMessage());
 		}
 	}
+
 	@When("^user toggles off Enable depression option on settings page$")
 	public void user_toggles_off_Enable_depression_option_on_settings_page() throws Throwable {
 		try {
@@ -599,10 +607,12 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off anxiety option" + "\n" + exception.getMessage());
 		}
 	}
+
 	@When("^user toggles off Enable anxiety option on settings page$")
 	public void user_toggles_off_Enable_anxiety_option_on_settings_page() throws Throwable {
 		try {
@@ -613,10 +623,12 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off anxiety option" + "\n" + exception.getMessage());
 		}
 	}
+
 	@When("^user toggles off Enable assessment option on settings page$")
 	public void user_toggles_off_Enable_assessment_option_on_settings_page() throws Throwable {
 		try {
@@ -626,7 +638,8 @@ public class Steps_Settings extends Base {
 				Thread.sleep(5000);
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
-			} else {
+			}
+			else {
 				webElementClick(pages.getPageSettings().getToggleAssessment());
 				Thread.sleep(5000);
 				scrollToWebElement(pages.getPageSettings().getButtonSave());
@@ -634,10 +647,12 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off assessment option" + "\n" + exception.getMessage());
 		}
 	}
+
 	@When("^user toggles off Enable physical activity option on settings page$")
 	public void user_toggles_off_Enable_physical_activity_option_on_settings_page() throws Throwable {
 		try {
@@ -648,12 +663,13 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off physical activity option" + "\n" + exception.getMessage());
 		}
-		
-		
+
 	}
+
 	@When("^user toggles on Enable physical activity option on settings page$")
 	public void user_toggles_on_Enable_physical_activity_option_on_settings_page() throws Throwable {
 		try {
@@ -664,20 +680,22 @@ public class Steps_Settings extends Base {
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			throw new Exception("Unable to toggle off physical activity option" + "\n" + exception.getMessage());
 		}
+	}
 
 	@When("^they disable or enable the needs assessment$")
 	public void they_disable_or_enable_the_needs_assessment() throws Throwable {
 		try {
-			if (isWebElementDisplayed(pages.getPageSettings().getToggleDisableNeeds())) {
-				webElementClick(pages.getPageSettings().getToggleDisableNeeds());
+			if (isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds())) {
+				webElementClick(pages.getPageSettings().getDisabledNeeds());
 				webElementClick(pages.getPageSettings().getButtonSave());
 
 			}
-			else if (isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds())) {
-				webElementClick(pages.getPageSettings().getToggleEnabledNeeds());
+			else if (isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds())) {
+				webElementClick(pages.getPageSettings().getEnabledNeeds());
 				webElementClick(pages.getPageSettings().getButtonSave());
 			}
 		}
@@ -714,7 +732,6 @@ public class Steps_Settings extends Base {
 		}
 
 	}
-
 
 	// ################################################## Then Steps ###################################################
 	@Then("^user inputs \"([^\"]*)\" as question and \"([^\"]*)\" as graph legend for question number one$")
@@ -908,7 +925,7 @@ public class Steps_Settings extends Base {
 			}
 			else if (!isWebElementDisplayed(pages.getPageSettings().getToggleVideo())) {
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getToggleVideo()));
-	}
+			}
 
 		}
 		catch (Exception exception) {
@@ -920,11 +937,11 @@ public class Steps_Settings extends Base {
 	public void sees_needs_assessment_option() throws Throwable {
 		try {
 
-			if (isWebElementDisplayed(pages.getPageSettings().getToggleDisableNeeds())) {
-				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getToggleDisableNeeds()));
+			if (isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds())) {
+				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds()));
 			}
-			else if (isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds())) {
-				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds()));
+			else if (isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds())) {
+				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds()));
 			}
 
 		}

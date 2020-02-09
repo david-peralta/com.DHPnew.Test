@@ -57,6 +57,51 @@ public class Page_MyInfo extends Base {
 	@FindBy(xpath = "//a[contains(text(),'DB Results')]")
 	private WebElement link_DBResults;
 
+	@FindBy(xpath = "//span[text()='I want more information about my condition']")
+	private WebElement button_Reason1;
+	@FindBy(xpath = "//span[text()='I want to speak about treatment side effects']")
+	private WebElement button_Reason2;
+	@FindBy(xpath = "//span[text()='I want to speak about my mood and relationships']")
+	private WebElement button_Reason3;
+	@FindBy(xpath = "//span[text()='I am not sure']")
+	private WebElement button_Reason4;
+	@FindBy(xpath = "(//input[@value='Begin Health Assessment'])[1]")
+	private WebElement button_StartAssessmentTOP;
+
+	@FindBy(xpath = "//div[text()='Assessments']")
+	private WebElement menubar_Assessment;
+
+	@FindBy(xpath = "//div[text()='Appointments']")
+	private WebElement menubar_Appointments;
+	@FindBy(xpath = "//input[@value='Request Appointment']")
+	private WebElement button_RequestAppointment;
+	@FindBy(xpath = "//span[text()='What would you like to talk about?']")
+	private WebElement label_SelectReason;
+
+	@FindBy(xpath = "//div[text()='Anxiety']")
+	private WebElement progressBar_Anxiety;
+	@FindBy(xpath = "(//div[text()='1'])[1]")
+	private WebElement progressBar_1;
+	@FindBy(xpath = "//input[@value='Anxiety']")
+	private WebElement checkbox_Anxiety;
+
+	@FindBy(xpath = "//span[contains(text(),'Anxiety')]")
+	private WebElement label_AnxietyResults;
+	@FindBy(xpath = "//span[contains(text(),'Physical Activity')]")
+	private WebElement label_PhysicalActivityResults;
+	@FindBy(xpath = "//span[text()='Assessment Results']")
+	private WebElement label_AssessmentResults;
+	@FindBy(xpath = "(//div[text()='1'])[1]/following::div[text()='Needs']")
+	private WebElement label_FirstPageNeeds;
+	@FindBy(xpath = "(//div[text()='2'])[1]/following::div[text()='Depression']")
+	private WebElement label_SecondPageDepression;
+	@FindBy(xpath = "(//div[text()='3'])[1]/following::div[text()='Anxiety']")
+	private WebElement label_ThirdPageAnxiety;
+	@FindBy(xpath = "(//div[text()='4'])[1]/following::div[text()='Physical Activity']")
+	private WebElement label_FourthPagePhysicalActivity;
+	@FindBy(xpath = "(//div[text()='Physical Activity'])[1]")
+	private WebElement label_PhysicalActivityQuestions;
+
 	// ################################################## Return Page Objects ##################################################
 	public WebElement getPSATabOnMyInfoPage() {
 		return getPSATabOnMyInfoPage;
@@ -121,4 +166,85 @@ public class Page_MyInfo extends Base {
 	public WebElement getLinkContactUs() {
 		return link_ContactUs;
 	}
+
+	public WebElement getButtonReason1() {
+		return button_Reason1;
+	}
+
+	public WebElement getStartAssessmentTOPButton() {
+		return button_StartAssessmentTOP;
+	}
+
+	public WebElement getButtonReason2() {
+		return button_Reason2;
+	}
+
+	public WebElement getButtonReason3() {
+		return button_Reason3;
+	}
+
+	public WebElement getButtonReason4() {
+		return button_Reason4;
+	}
+
+	public WebElement getAssessmentMenubar() {
+		return menubar_Assessment;
+	}
+
+	public WebElement getSelectReasonQuestion() {
+		return label_SelectReason;
+	}
+
+	public WebElement getPhysicalActivityResultsLabel() {
+		return label_PhysicalActivityResults;
+	}
+
+	public WebElement getAnxietyResultsLabel() {
+		return label_AnxietyResults;
+	}
+
+	public WebElement getPhysicalActivityQuestionsLabel() {
+		return label_PhysicalActivityQuestions;
+	}
+
+	public WebElement getFirstPageNeeds() {
+		return label_FirstPageNeeds;
+	}
+
+	public WebElement getFourthPagePhysicalActivity() {
+		return label_FourthPagePhysicalActivity;
+	}
+
+	public WebElement getThirdPageAnxiety() {
+		return label_ThirdPageAnxiety;
+	}
+
+	public WebElement getSecondPageDepression() {
+		return label_SecondPageDepression;
+	}
+
+	public WebElement getAssessmentResultsLabel() {
+		return label_AssessmentResults;
+	}
+
+	public WebElement getAnxietyProgressBar() {
+		return progressBar_Anxiety;
+	}
+
+	public WebElement getAnxietyCheckbox() {
+		return checkbox_Anxiety;
+	}
+
+	public WebElement getProgressBar1() {
+		return progressBar_1;
+	}
+
+	public WebElement getRequestAppointmentButton() {
+		return button_RequestAppointment;
+	}
+
+	public WebElement getAppointmentsMenubar() {
+		return menubar_Appointments;
+	}
+
 }

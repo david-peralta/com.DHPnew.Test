@@ -49,6 +49,23 @@ public class Page_Clinician extends Base {
 	@FindBy(xpath = "//input[contains(@value,'Reset')]")
 	private WebElement button_Reset;
 
+	@FindBy(xpath = "//div[@aria-selected='true']//div[@class='lbl_textAlign']//following::span[text()='Basic Info']")
+	private WebElement label_BasicInfoTabDefault;
+	@FindBy(xpath = "(//span[text()='Basic Info'])[1]")
+	private WebElement label_BasicInfoTab;
+	@FindBy(xpath = "(//span[text()='Medical Info'])[1]")
+	private WebElement label_MedicalInfoTab;
+	@FindBy(xpath = "//span[text()='PSA']")
+	private WebElement label_PSATab;
+	@FindBy(xpath = "//span[text()='Appointments']")
+	private WebElement label_AppointmentsTab;
+	@FindBy(xpath = "//span[text()='Notes']")
+	private WebElement label_NotesTab;
+	@FindBy(xpath = "//span[text()='demeth camuin']")
+	private WebElement label_PatientName;
+	@FindBy(xpath = "//div[contains(@id,'ctn_assessment_graph')]")
+	private WebElement graph_AssesstmentOnAppointmentsTab;
+
 	// ############################################## Return Page Objects ###############################################
 	public WebElement getClinicianManagers() {
 		return header_ClinicianManagers;
@@ -74,4 +91,35 @@ public class Page_Clinician extends Base {
 		return link_DemethPatient;
 	}
 
+	public WebElement getAssesstmentOnAppointmentsTabGraph() {
+		return graph_AssesstmentOnAppointmentsTab;
+	}
+
+	public WebElement getDefaultTab() {
+		return label_BasicInfoTabDefault;
+	}
+
+	public WebElement getPatientNameLabel() {
+		return label_PatientName;
+	}
+
+	public WebElement getBasicInfoTab() {
+		return label_BasicInfoTab;
+	}
+
+	public WebElement getMedicalInfoTab() {
+		return label_MedicalInfoTab;
+	}
+
+	public WebElement getPSATab() {
+		return label_PSATab;
+	}
+
+	public WebElement getAppointmentsTab() {
+		return label_AppointmentsTab;
+	}
+
+	public WebElement getNotesTab() {
+		return label_NotesTab;
+	}
 }

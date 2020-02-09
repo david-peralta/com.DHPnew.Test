@@ -67,6 +67,10 @@ public class Page_ConfigManagers extends Base {
 	private WebElement button_UnsaveChangespopupYes;
 	@FindBy(xpath = "//span[text()='Clinician managers']")
 	private WebElement label_ClinicianManager;
+	@FindBy(xpath = "//span[text()='Edit Clinician manager']")
+	private WebElement label_EditClinicianManager;
+	@FindBy(xpath = "(//span[text()='a'])[1]")
+	private WebElement label_Alastname;
 
 	// ############################################## Return Page Objects ###############################################
 	public WebElement getUnsaveChangespopupLabel() {
@@ -181,4 +185,11 @@ public class Page_ConfigManagers extends Base {
 		return menubar_Logout;
 	}
 
+	public WebElement getEditClinicianManagerLabel() {
+		return label_EditClinicianManager;
+	}
+
+	public WebElement getAlastNameLabel() {
+		return label_Alastname;
+	}
 }

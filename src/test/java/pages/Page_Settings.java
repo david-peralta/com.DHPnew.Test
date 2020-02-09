@@ -156,6 +156,23 @@ public class Page_Settings extends Base {
 	@FindBy(xpath = "//span[contains(text(), 'Saved Successfully!')]")
 	private WebElement message_Saved;
 
+	@FindBy(xpath = "(//div[contains(@id,'ToggleButtonWrapper')])[5]")
+	private WebElement toggle_Needs;
+	@FindBy(xpath = "//div[text()='Enable Needs']/parent::div/following-sibling::div//div[@class='toggle-button toggle-button-checked']")
+	private WebElement toggle_NeedsON;
+	@FindBy(xpath = "(//div[contains(@id,'ToggleButtonWrapper')])[6]")
+	private WebElement toggle_Depression;
+	@FindBy(xpath = "//div[text()='Enable Depression']/parent::div/following-sibling::div//div[@class='toggle-button toggle-button-checked']")
+	private WebElement toggle_DepressionON;
+	@FindBy(xpath = "(//div[contains(@id,'ToggleButtonWrapper')])[7]")
+	private WebElement toggle_Anxiety;
+	@FindBy(xpath = "//div[text()='Enable Anxiety']/parent::div/following-sibling::div//div[@class='toggle-button toggle-button-checked']")
+	private WebElement toggle_AnxietyON;
+	@FindBy(xpath = "//div[text()='Enable Physical Activity']/parent::div/following-sibling::div//div[@class='toggle-button toggle-button-checked']")
+	private WebElement toggle_PhysicalActivityON;
+	@FindBy(xpath = "(//div[contains(@id,'ToggleButtonWrapper')])[8]")
+	private WebElement toggle_PhysicalActivity;
+
 	// ############################################## Return Page Objects ###############################################
 	public WebElement getTimelineLabel() {
 		return label_Timeline;
@@ -405,6 +422,38 @@ public class Page_Settings extends Base {
 
 	public WebElement getOptionClinicVisit() {
 		return option_ClinicVisit;
+	}
+
+	public WebElement getPhysicalActivityOn() {
+		return toggle_PhysicalActivityON;
+	}
+
+	public WebElement getNeedsToggle() {
+		return toggle_Needs;
+	}
+
+	public WebElement getNeedsToggleON() {
+		return toggle_NeedsON;
+	}
+
+	public WebElement getDepressionToggle() {
+		return toggle_Depression;
+	}
+
+	public WebElement getDepressionToggleOn() {
+		return toggle_DepressionON;
+	}
+
+	public WebElement getAnxietyToggle() {
+		return toggle_Anxiety;
+	}
+
+	public WebElement getAnxietyToggleOn() {
+		return toggle_AnxietyON;
+	}
+
+	public WebElement getPhysicalActivityToggle() {
+		return toggle_PhysicalActivity;
 	}
 
 }
