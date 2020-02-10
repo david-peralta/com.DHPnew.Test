@@ -81,6 +81,19 @@ public class Steps_Home extends Base {
 		}
 	}
 
+	@Given("^user is on homepage$")
+	public void user_is_on_homepage() throws Throwable {
+		try {
+			Base.initialization();
+			launchURL(properties.getProperty("url"));
+			Assert.assertTrue(getCurrentUrl().contains(properties.getProperty("url")));
+			waitUntilWebElementVisible(pages.getPageHome().getRegisterButton());
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("Cannot open browers" + "\n" + exception.getMessage());
+		}
+	}
+
 	// ################################################## When Steps ###################################################
 	@When("^the user logs out$")
 	public void the_user_logs_out() throws Throwable {
@@ -185,4 +198,14 @@ public class Steps_Home extends Base {
 		}
 	}
 
+	@Then("^checks hero text is displayed$")
+	public void checks_hero_text_is_displayed() throws Throwable {
+		try {
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroText()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroSubText()));
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("The link to the users page is displayed." + "\n" + exception.getMessage());
+		}
+	}
 }

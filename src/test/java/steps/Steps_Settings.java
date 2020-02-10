@@ -733,7 +733,32 @@ public class Steps_Settings extends Base {
 
 	}
 
+	@When("^user switches videoconferencing option$")
+	public void user_switches_videoconferencing_option() throws Throwable {
+		try {
+			scrollToBottom();
+			waitUntilWebElementVisible((pages.getPageSettings().getButtonSave()));
+
+			webElementClick(pages.getPageSettings().getToggleVideo());
+		}
+		catch (Exception exception) {
+			throw new Exception("Unable to click on video conferencing" + "\n" + exception.getMessage());
+		}
+	}
+
 	// ################################################## Then Steps ###################################################
+	@Then("^user checks if horizontal tabs on settings page is complete$")
+	public void user_checks_if_horizontal_tabs_on_settings_page_is_complete() throws Throwable {
+		try {
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getHorizontaltabGeneral()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getHorizontaltabSpecialityList()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getHorizontaltabWellnessCheck()));
+		}
+		catch (AssertionError exception) {
+			throw new AssertionError("Tabs are not displayed properly" + "\n" + exception.getMessage());
+		}
+	}
+
 	@Then("^user inputs \"([^\"]*)\" as question and \"([^\"]*)\" as graph legend for question number one$")
 	public void user_inputs_as_question_and_as_graph_legend_for_question_number_one(String arg1, String arg2) throws Throwable {
 		try {

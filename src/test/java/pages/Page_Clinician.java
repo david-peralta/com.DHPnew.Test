@@ -66,6 +66,22 @@ public class Page_Clinician extends Base {
 	@FindBy(xpath = "//div[contains(@id,'ctn_assessment_graph')]")
 	private WebElement graph_AssesstmentOnAppointmentsTab;
 
+	@FindBy(xpath = "//input[@placeholder='Select Clinician']")
+	private WebElement placeholder_SelectClinician;
+
+	@FindBy(xpath = "//div[contains(text(),'record')]")
+	private WebElement label_RecordFound;
+	@FindBy(xpath = "//span[contains(text(),'3 records found')]")
+	private WebElement alert_RecordFound;
+
+	@FindBy(xpath = "//div[contains(text(),'record')]")
+	private WebElement label_NoRecordFound;
+	@FindBy(xpath = "//span[contains(text(),'0 records found')]")
+	private WebElement alert_NoRecordFound;
+
+	@FindBy(xpath = "//div[contains(@id,'ctn__Search')]//input[contains(@id,'inputSearch')]")
+	private WebElement input_SearchField;
+
 	// ############################################## Return Page Objects ###############################################
 	public WebElement getClinicianManagers() {
 		return header_ClinicianManagers;
@@ -121,5 +137,29 @@ public class Page_Clinician extends Base {
 
 	public WebElement getNotesTab() {
 		return label_NotesTab;
+	}
+
+	public WebElement getPlaceHolderSelectClinician() {
+		return placeholder_SelectClinician;
+	}
+
+	public WebElement getLabelRecordFound() {
+		return label_RecordFound;
+	}
+
+	public WebElement getAlertRecordFound() {
+		return alert_RecordFound;
+	}
+
+	public WebElement getLabelNoRecordFound() {
+		return label_RecordFound;
+	}
+
+	public WebElement getAlertNoRecordFound() {
+		return alert_RecordFound;
+	}
+
+	public WebElement getInputSearchField() {
+		return input_SearchField;
 	}
 }

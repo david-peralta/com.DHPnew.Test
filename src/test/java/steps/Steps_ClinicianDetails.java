@@ -72,6 +72,18 @@ public class Steps_ClinicianDetails extends Base {
 		}
 	}
 
+	@When("^user clicks on clinician to activate$")
+	public void user_clicks_on_clinician_to_activate() throws Throwable {
+		try {
+			webElementClick(pages.getPageClinicianDetails().getButtonActivate());
+			waitUntilWebElementVisible(pages.getPageClinicianDetails().getPopupActivated());
+			webElementClick(pages.getPageClinicianDetails().getButtonConfirm2());
+		}
+		catch (Exception exception) {
+			throw new Exception("unable to activate clinician manager" + "\n" + exception.getMessage());
+		}
+	}
+
 	// ################################################## Then Steps ###################################################
 
 	@Then("^checks if the buttons are displayed$")

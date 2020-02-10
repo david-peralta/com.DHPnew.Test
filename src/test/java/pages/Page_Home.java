@@ -43,6 +43,13 @@ public class Page_Home extends Base {
 	@FindBy(xpath = "//a[text()='Login']")
 	private WebElement link_LogInOnFooter;
 
+	@FindBy(xpath = "//div[text()='Welcome to PROSTMATE']")
+	private WebElement header_HeroText;
+
+	// @FindBy(xpath = "//div[text()='Quality Care that's all about You']")
+	@FindBy(xpath = "//div[text()='Quality Care']")
+	private WebElement header_HeroSubText;
+
 	// ############################################## Return Page Objects ###############################################
 	public WebElement getLogInLinkOnFooter() {
 		return link_LogInOnFooter;
@@ -86,5 +93,13 @@ public class Page_Home extends Base {
 
 	public WebElement getButtonUsers() {
 		return button_Users;
+	}
+
+	public WebElement getHeaderHeroText() {
+		return header_HeroText;
+	}
+
+	public WebElement getHeaderHeroSubText() {
+		return header_HeroSubText;
 	}
 }

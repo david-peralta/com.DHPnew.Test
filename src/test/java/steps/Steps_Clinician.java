@@ -2,6 +2,7 @@ package steps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import org.junit.Assert;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -61,6 +62,33 @@ public class Steps_Clinician extends Base {
 			throw new Exception("Unable to locate Appointments tab." + "\n" + exception.getMessage());
 		}
 	}
+
+	@When("^user inputs an empty clinician to the search field$")
+	public void user_inputs_an_empty_clinician_to_the_search_field() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.getPageClinician().getInputSearchField());
+			webElementSendKeys(pages.getPageClinician().getInputSearchField(), "All");
+			webElementClick(pages.getPageClinician().getSearchButton());
+			waitUntilWebElementVisible(pages.getPageClinician().getSearchButton());
+		}
+		catch (Exception exception) {
+			throw new Exception("Error in searching clinician" + "\n" + exception.getMessage());
+		}
+
+	}
+
+	@When("^they click on reset on search field$")
+	public void they_click_on_reset_on_search_field() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.getPageClinician().getResetButton());
+			webElementClick(pages.getPageClinician().getResetButton());
+			waitUntilWebElementVisible(pages.getPageClinician().getSearchButton());
+		}
+		catch (Exception exception) {
+			throw new Exception("Unable to reset search field" + "\n" + exception.getMessage());
+		}
+
+	}
 	// ################################################## Then Steps ##################################################
 
 	@Then("^the clinician see the following four tabs under the patient's profile$")
@@ -106,5 +134,58 @@ public class Steps_Clinician extends Base {
 		catch (AssertionError exception) {
 			throw new AssertionError("Tabs under the patient's profile is incomplete." + "\n" + exception.getMessage());
 		}
+	}
+
+	@Then("^sees the screen elements displayed$")
+	public void sees_the_screen_elements_displayed() throws Throwable {
+		try {
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageClinician().getPlaceHolderSelectClinician()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageClinician().getResetButton()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageClinician().getSearchButton()));
+		}
+		catch (AssertionError exception) {
+			throw new Exception("Screen Element are not displayed" + "\n" + exception.getMessage());
+		}
+
+	}
+
+	@Then("^check results of records found$")
+	public void check_results_of_records_found() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.getPageClinician().getAlertRecordFound());
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageClinician().getAlertRecordFound()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageClinician().getLabelRecordFound()));
+		}
+		catch (AssertionError exception) {
+			throw new Exception("No records to shown" + "\n" + exception.getMessage());
+		}
+
+	}
+
+	@Then("^checks result of no records found$")
+	public void checks_result_of_no_records_found() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.getPageClinician().getAlertNoRecordFound());
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageClinician().getAlertNoRecordFound()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageClinician().getLabelNoRecordFound()));
+		}
+		catch (AssertionError exception) {
+			throw new Exception("Unable to show records" + "\n" + exception.getMessage());
+		}
+
+	}
+
+	@When("^user inputs a clinician to the search field$")
+	public void user_inputs_a_clinician_to_the_search_field() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.getPageClinician().getInputSearchField());
+			webElementSendKeys(pages.getPageClinician().getInputSearchField(), "User");
+			webElementClick(pages.getPageClinician().getSearchButton());
+			waitUntilWebElementVisible(pages.getPageClinician().getSearchButton());
+		}
+		catch (Exception exception) {
+			throw new Exception("No Clinicians is displayed" + "\n" + exception.getMessage());
+		}
+
 	}
 }
