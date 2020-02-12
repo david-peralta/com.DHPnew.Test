@@ -31,16 +31,16 @@ Feature: DHP-33: As a Configuration Mgr., I want to be able to enable and disabl
 
   @DHP33
   Scenario: 06: Configuration Mgr. disables all switches related to Assessments
-  Given the config manager is on the configuration setting page
-  When the user disables assessment option off
-  Then sees message that it is saved successfully
-  
+    Given the config manager is on the configuration setting page
+    When the user disables assessment option off
+    Then sees message that it is saved successfully
+
   @DHP33
   Scenario: 07: Configuration Mgr. switches on Enable Assessment
-  Given the config manager is on the configuration setting page
-  When the user enables assessment option on
-  Then sees message that it is saved successfully
-  
+    Given the config manager is on the configuration setting page
+    When the user enables assessment option on
+    Then sees message that it is saved successfully
+
   @DHP33
   Scenario: 08: Configuration Mgr. cancels with no unsaved changes
     Given the config manager is on the configuration setting page
