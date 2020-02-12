@@ -93,16 +93,18 @@ public class Page_Settings extends Base {
 	private WebElement label_Assessment;
 	@FindBy(xpath = "//div[text()='Enable Assessment']")
 	private WebElement option_Assessment;
-	@FindBy(xpath = "//div[text() = 'Enable Assessment']/parent::div//following-sibling::div//div[contains(@class, 'toggle-button toggle-button-checked')]")
-	private WebElement toggle_Assessment;
 	@FindBy(xpath = "//div[text() = 'Enable Assessment']/parent::div//following-sibling::div//div[@class = 'toggle-button']")
+	private WebElement toggle_Assessment;
+	@FindBy(xpath = "//div[text() = 'Enable Assessment']/parent::div//following-sibling::div//div[contains(@class, 'toggle-button toggle-button-checked')]")
 	private WebElement toggle_DisableAssessments;
 
 	// Assessment - Needs
 	@FindBy(xpath = "//div[text()='Enable Needs']")
 	private WebElement option_Needs;
-	@FindBy(xpath = "(//div[contains(@class,'toggle-button')])[9]")
+	@FindBy(xpath = "//div[text() = 'Enable Needs']/parent::div//following-sibling::div//div[@class = 'toggle-button']")
 	private WebElement toggle_EnableNeeds;
+	@FindBy(xpath = "//div[text() = 'Enable Needs']/parent::div//following-sibling::div//div[contains(@class, 'toggle-button toggle-button-checked')]")
+	private WebElement toggle_DisableNeeds;
 	@FindBy(xpath = "(//div[contains(@class,'toggle-button toggle-button-disabled')])[1]")
 	private WebElement disable_Needs;
 
@@ -368,8 +370,12 @@ public class Page_Settings extends Base {
 		return toggle_DisableAssessments;
 	}
 
-	public WebElement getEnabledNeeds() {
+	public WebElement getToggleEnabledNeeds() {
 		return toggle_EnableNeeds;
+	}
+
+	public WebElement getToggleDisableNeeds() {
+		return toggle_DisableNeeds;
 	}
 
 	public WebElement getDisabledNeeds() {

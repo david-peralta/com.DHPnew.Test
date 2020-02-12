@@ -29,11 +29,11 @@ public class Steps_MyPatient extends Base {
 			webElementSendKeys(pages.getPageMyPatient().getInputSearchName(), "demeth");
 			webElementClick(pages.getPageMyPatient().getSearchButton());
 			webElementClick(pages.getPageMyPatient().getLinkPatientUser());
-			waitUntilWebElementVisible(pages.getPageMyPatient().getHeaderPatientProfile());
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getHeaderPatientProfile()));
 
 		}
-		catch (Exception exception) {
-			throw new Exception("clinician cannot proceed to patient's profile page." + "\n" + exception.getMessage());
+		catch (AssertionError exception) {
+			throw new AssertionError("clinician cannot proceed to patient's profile page." + "\n" + exception.getMessage());
 		}
 	}
 
@@ -79,9 +79,10 @@ public class Steps_MyPatient extends Base {
 	@Then("^views the patient profile tabs$")
 	public void views_the_patient_profile_tabs() throws Throwable {
 		try {
+			waitUntilWebElementVisible(pages.getPageMyPatient().getTabPatientNote());
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getTabPatientBasicInfo()));
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getTabPatientMedicalInfo()));
-			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getTabPatientPSA()));
+			// Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getTabPatientPSA()));
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getTabPatientAppointment()));
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getTabPatientNote()));
 
@@ -94,7 +95,6 @@ public class Steps_MyPatient extends Base {
 	@Then("^sees feedback success message is displayed$")
 	public void sees_feedback_success_message_is_displayed() throws Throwable {
 		try {
-			Assert.assertTrue(isXPathNotExisting("//textarea[contains(@id,'TextArea_PatientNote')]"));
 			waitUntilWebElementVisible(pages.getPageMyPatient().getMessageNoteAdded());
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getMessageNoteAdded()));
 
@@ -107,7 +107,10 @@ public class Steps_MyPatient extends Base {
 	@Then("^page is redirected back to the notes list$")
 	public void page_is_redirected_back_to_the_notes_list() throws Throwable {
 		try {
-			Assert.assertTrue(isXPathNotExisting("//textarea[contains(@id,'TextArea_PatientNote')]"));
+			waitUntilWebElementVisible(pages.getPageMyPatient().getSearchButton());
+			waitUntilWebElementVisible(pages.getPageMyPatient().getResetButton());
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getResetButton()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getSearchButton()));
 		}
 		catch (AssertionError exception) {
 			throw new AssertionError("Unable to return to notes list" + "\n" + exception.getMessage());

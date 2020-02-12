@@ -152,11 +152,11 @@ public class Page_Clinician extends Base {
 	}
 
 	public WebElement getLabelNoRecordFound() {
-		return label_RecordFound;
+		return label_NoRecordFound;
 	}
 
 	public WebElement getAlertNoRecordFound() {
-		return alert_RecordFound;
+		return alert_NoRecordFound;
 	}
 
 	public WebElement getInputSearchField() {

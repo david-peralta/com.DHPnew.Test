@@ -20,6 +20,7 @@ public class Pages extends Base {
 	private Page_ChangePassword page_ChangePassword;
 	private Page_MyPatient page_MyPatient;
 	private Page_AccountDeactivated page_AccountDeactivated;
+	private Page_MyAssessments page_MyAssessments;
 
 	public Page_Settings getPageSettings() {
 		return (page_Settings == null) ? page_Settings = new Page_Settings() : page_Settings;
@@ -71,6 +72,10 @@ public class Pages extends Base {
 
 	public Page_AccountDeactivated getPageAccountDeactivated() {
 		return (page_AccountDeactivated == null) ? page_AccountDeactivated = new Page_AccountDeactivated() : page_AccountDeactivated;
+	}
+
+	public Page_MyAssessments getPageMyAssessments() {
+		return (page_MyAssessments == null) ? page_MyAssessments = new Page_MyAssessments() : page_MyAssessments;
 	}
 
 }

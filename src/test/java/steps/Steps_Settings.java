@@ -66,7 +66,7 @@ public class Steps_Settings extends Base {
 
 			webElementClick(pages.pageConfigManagers().getMenubarSettings());
 			scrollToBottom();
-			Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getLabelAssessment()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getButtonSave()));
 		}
 		catch (AssertionError exception) {
 			throw new AssertionError("Unable to show assessment settings page" + "\n" + exception.getMessage());
@@ -315,8 +315,7 @@ public class Steps_Settings extends Base {
 	public void the_user_switches_assessment_option_off() throws Throwable {
 		try {
 			scrollToBottom();
-			webElementClick(pages.getPageSettings().getToggleAssessment());
-			// isWebElementSelected(pages.getPageSettings().getToggleAssessment());
+			webElementClick(pages.getPageSettings().getDisabledAssessment());
 		}
 		catch (Exception exception) {
 			throw new Exception("unable to switch assessment option" + "\n" + exception.getMessage());
@@ -689,15 +688,43 @@ public class Steps_Settings extends Base {
 	@When("^they disable or enable the needs assessment$")
 	public void they_disable_or_enable_the_needs_assessment() throws Throwable {
 		try {
-			if (isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds())) {
-				webElementClick(pages.getPageSettings().getDisabledNeeds());
+			if (isWebElementDisplayed(pages.getPageSettings().getToggleDisableNeeds())) {
+				webElementClick(pages.getPageSettings().getToggleDisableNeeds());
 				webElementClick(pages.getPageSettings().getButtonSave());
 
 			}
-			else if (isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds())) {
-				webElementClick(pages.getPageSettings().getEnabledNeeds());
+			else if (isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds())) {
+				webElementClick(pages.getPageSettings().getToggleEnabledNeeds());
 				webElementClick(pages.getPageSettings().getButtonSave());
 			}
+		}
+		catch (Exception exception) {
+			throw new Exception("unable to click needs assessment" + "\n" + exception.getMessage());
+		}
+
+	}
+
+	@When("^they click disable the needs assessment$")
+	public void they_click_disable_the_needs_assessment() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.getPageSettings().getButtonSave());
+			webElementClick(pages.getPageSettings().getToggleDisableNeeds());
+			webElementClick(pages.getPageSettings().getButtonSave());
+
+		}
+		catch (Exception exception) {
+			throw new Exception("unable to click needs assessment" + "\n" + exception.getMessage());
+		}
+
+	}
+
+	@When("^they click enable the needs assessment$")
+	public void they_click_enable_the_needs_assessment() throws Throwable {
+		try {
+			waitUntilWebElementVisible(pages.getPageSettings().getButtonSave());
+			webElementClick(pages.getPageSettings().getToggleEnabledNeeds());
+			webElementClick(pages.getPageSettings().getButtonSave());
+
 		}
 		catch (Exception exception) {
 			throw new Exception("unable to click needs assessment" + "\n" + exception.getMessage());
@@ -864,8 +891,8 @@ public class Steps_Settings extends Base {
 			else if (isWebElementDisplayed(pages.getPageSettings().getDisabledAssessment())) {
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getDisabledAssessment()));
 			}
-			else if (isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds())) {
-				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds()));
+			else if (isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds())) {
+				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds()));
 			}
 			else if (isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds())) {
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds()));
@@ -962,11 +989,11 @@ public class Steps_Settings extends Base {
 	public void sees_needs_assessment_option() throws Throwable {
 		try {
 
-			if (isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds())) {
-				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getDisabledNeeds()));
+			if (isWebElementDisplayed(pages.getPageSettings().getDisabledAssessment())) {
+				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getDisabledAssessment()));
 			}
-			else if (isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds())) {
-				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getEnabledNeeds()));
+			else if (isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds())) {
+				Assert.assertTrue(isWebElementDisplayed(pages.getPageSettings().getToggleEnabledNeeds()));
 			}
 
 		}

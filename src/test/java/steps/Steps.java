@@ -20,6 +20,7 @@ public class Steps extends Base {
 	private Steps_ChangePassword steps_ChangePassword;
 	private Steps_MyPatient steps_MyPatient;
 	private Steps_AccountDeactivated steps_AccountDeactivated;
+	private Steps_MyAssessments steps_MyAssessments;
 
 	public Steps_Settings getStepsSettings() {
 		return (steps_Settings == null) ? steps_Settings = new Steps_Settings() : steps_Settings;
@@ -71,5 +72,9 @@ public class Steps extends Base {
 
 	public Steps_AccountDeactivated getsStepsAccountDeactivated() {
 		return (steps_AccountDeactivated == null) ? steps_AccountDeactivated = new Steps_AccountDeactivated() : steps_AccountDeactivated;
+	}
+
+	public Steps_MyAssessments getsStepsMyAssessments() {
+		return (steps_MyAssessments == null) ? steps_MyAssessments = new Steps_MyAssessments() : steps_MyAssessments;
 	}
 }

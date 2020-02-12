@@ -45,11 +45,11 @@ public class Steps_ClinicianDetails extends Base {
 			}
 			else if (isWebElementDisplayed(pages.getPageClinicianDetails().getButtonActivate())) {
 				webElementClick(pages.getPageClinicianDetails().getButtonActivate());
-				Assert.assertTrue(getWebElementCssValue(pages.getPageClinicianDetails().getButtonCancel1(), "background-color").contains("255, 255, 255, 1"));
+				Assert.assertTrue(getWebElementCssValue(pages.getPageClinicianDetails().getButtonCancel2(), "background-color").contains("255, 255, 255, 1"));
 				webElementClick(pages.getPageClinicianDetails().getButtonCancel2());
 			}
 		}
-		catch (Exception exception) {
+		catch (AssertionError exception) {
 			throw new Exception("Cannot cancel confirmation message" + "\n" + exception.getMessage());
 		}
 	}
@@ -162,15 +162,11 @@ public class Steps_ClinicianDetails extends Base {
 	public void sees_clinician_manager_status() throws Throwable {
 		try {
 			if (isWebElementDisplayed(pages.getPageClinicianDetails().getButtonDeactivate())) {
-				Assert.assertFalse(isWebElementDisplayed(pages.getPageClinicianDetails().getPopupDeactivated()));
-
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageClinicianDetails().getButtonCancel()));
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageClinicianDetails().getButtonDeactivate()));
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageClinicianDetails().getButtonUpdate()));
 			}
 			else if (isWebElementDisplayed(pages.getPageClinicianDetails().getButtonActivate())) {
-				Assert.assertFalse(isWebElementDisplayed(pages.getPageClinicianDetails().getPopupActivated()));
-
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageClinicianDetails().getButtonCancel()));
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageClinicianDetails().getButtonActivate()));
 				Assert.assertTrue(isWebElementDisplayed(pages.getPageClinicianDetails().getButtonUpdate()));

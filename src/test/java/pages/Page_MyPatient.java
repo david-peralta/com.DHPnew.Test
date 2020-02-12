@@ -22,7 +22,7 @@ public class Page_MyPatient extends Base {
 	private WebElement button_Reset;
 	@FindBy(xpath = "(//input[contains(@value,'Cancel')])[2]")
 	private WebElement button_Cancel;
-	@FindBy(xpath = "(//input[contains(@value,'Save')])[1]")
+	@FindBy(xpath = "(//input[contains(@value,'Save')])[2]")
 	private WebElement button_Save;
 	@FindBy(xpath = "//input[contains(@value,'Add New Note')]")
 	private WebElement button_AddNewNote;
@@ -36,7 +36,7 @@ public class Page_MyPatient extends Base {
 	private WebElement tab_PatientBasicInfo;
 	@FindBy(xpath = "//div[contains(@id,'Title')]//span[text()='Medical Info']")
 	private WebElement tab_PatientMedicalInfo;
-	@FindBy(xpath = "	//span[text()='PSA']")
+	@FindBy(xpath = "//span[text()='PSA']")
 	private WebElement tab_PatientPSA;
 	@FindBy(xpath = "//span[text()='Appointments']")
 	private WebElement tab_PatientAppointment;

@@ -102,6 +102,9 @@ public class Page_MyInfo extends Base {
 	@FindBy(xpath = "(//div[text()='Physical Activity'])[1]")
 	private WebElement label_PhysicalActivityQuestions;
 
+	@FindBy(xpath = "//div[text()='Assessments']")
+	private WebElement menubar_Assessments;
+
 	// ################################################## Return Page Objects ##################################################
 	public WebElement getPSATabOnMyInfoPage() {
 		return getPSATabOnMyInfoPage;
@@ -245,6 +248,10 @@ public class Page_MyInfo extends Base {
 
 	public WebElement getAppointmentsMenubar() {
 		return menubar_Appointments;
+	}
+
+	public WebElement getMenubarAssessments() {
+		return menubar_Assessments;
 	}
 
 }
