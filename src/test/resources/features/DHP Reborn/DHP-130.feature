@@ -26,8 +26,7 @@ Feature: DHP-130: As a Clinician, I want to add a clinical note against a patien
     Then page is redirected back to the notes list
 
   @DHP130E
-  Scenario: 05: Mandatory field not filled in #No validation shown when field is empty
-    Given that a clinician has selected a Patient in the my patients page
+  Scenario: 05: Mandatory field not filled in #No validation shown when field is empty - BUG
 
   @DHP130F
   Scenario: 06: Mandatory fields filled in

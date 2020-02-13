@@ -316,6 +316,7 @@ public class Steps_Settings extends Base {
 		try {
 			scrollToBottom();
 			webElementClick(pages.getPageSettings().getDisabledAssessment());
+			Thread.sleep(2000);
 		}
 		catch (Exception exception) {
 			throw new Exception("unable to switch assessment option" + "\n" + exception.getMessage());

@@ -48,6 +48,7 @@ public class Steps_MyPatient extends Base {
 			waitUntilWebElementVisible(pages.getPageMyPatient().getTextAreaPatientNote());
 			webElementSendKeys(pages.getPageMyPatient().getTextAreaPatientNote(), "Sample Test Note");
 			webElementClick(pages.getPageMyPatient().getButtonSave());
+
 		}
 		catch (Exception exception) {
 			throw new Exception("Unable to add note on patient profile" + "\n" + exception.getMessage());
@@ -120,6 +121,8 @@ public class Steps_MyPatient extends Base {
 	@Then("^views the most recent notes at the top$")
 	public void views_the_most_recent_notes_at_the_top() throws Throwable {
 		try {
+			waitUntilWebElementVisible(pages.getPageMyPatient().getSearchButton());
+			waitUntilWebElementVisible(pages.getPageMyPatient().getResetButton());
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getRowFirstData()));
 		}
 		catch (AssertionError exception) {

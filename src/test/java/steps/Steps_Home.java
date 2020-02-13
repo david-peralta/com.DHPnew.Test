@@ -1,6 +1,7 @@
 package steps;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -201,6 +202,9 @@ public class Steps_Home extends Base {
 	@Then("^checks hero text is displayed$")
 	public void checks_hero_text_is_displayed() throws Throwable {
 		try {
+			actionSendKeys(Keys.chord(Keys.PAGE_UP));
+			actionSendKeys(Keys.chord(Keys.PAGE_UP));
+			Thread.sleep(2000);
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroText()));
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroSubText()));
 		}
