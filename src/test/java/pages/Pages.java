@@ -21,9 +21,14 @@ public class Pages extends Base {
 	private Page_MyPatient page_MyPatient;
 	private Page_AccountDeactivated page_AccountDeactivated;
 	private Page_MyAssessments page_MyAssessments;
+	private Page_Appointments page_Appointments;
 
 	public Page_Settings getPageSettings() {
 		return (page_Settings == null) ? page_Settings = new Page_Settings() : page_Settings;
+	}
+
+	public Page_Appointments getpageAppointments() {
+		return (page_Appointments == null) ? page_Appointments = new Page_Appointments() : page_Appointments;
 	}
 
 	public Page_Home getPageHome() {

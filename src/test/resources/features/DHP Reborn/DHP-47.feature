@@ -7,14 +7,23 @@ Feature: DHP-47: As a patient, I want the PSA tab to be hidden from my info sect
     Then user enables PSA toggle on info type settings page
     And user toggles on health indicator option on settings page
 
+  @End
+  Scenario: Close web browser
+
   Scenario: 1b: Patient checks if PSA tab is displayed
     Given the user is on wellness check tab on my info page
     Then PSA tab on my info page is displayed
+
+  @End
+  Scenario: Close web browser
 
   Scenario: 2a: Patient views "My Info" section when "Disable PSA" is toggled on for their instance
     Given the user is on configuration managers landing page
     When user clicks on settings menubar
     Then user disables PSA toggle on info type settings page
+
+  @End
+  Scenario: Close web browser
 
   Scenario: 2b: Patient checks if PSA tab is hidden
     Given the user is on wellness check tab on my info page

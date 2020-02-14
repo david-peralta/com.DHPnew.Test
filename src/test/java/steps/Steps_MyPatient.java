@@ -29,11 +29,11 @@ public class Steps_MyPatient extends Base {
 			webElementSendKeys(pages.getPageMyPatient().getInputSearchName(), "demeth");
 			webElementClick(pages.getPageMyPatient().getSearchButton());
 			webElementClick(pages.getPageMyPatient().getLinkPatientUser());
-			Assert.assertTrue(isWebElementDisplayed(pages.getPageMyPatient().getHeaderPatientProfile()));
+			waitUntilWebElementVisible(pages.getPageMyPatient().getHeaderPatientProfile());
 
 		}
-		catch (AssertionError exception) {
-			throw new AssertionError("clinician cannot proceed to patient's profile page." + "\n" + exception.getMessage());
+		catch (Exception exception) {
+			throw new Exception("clinician cannot proceed to patient's profile page." + "\n" + exception.getMessage());
 		}
 	}
 
@@ -48,7 +48,6 @@ public class Steps_MyPatient extends Base {
 			waitUntilWebElementVisible(pages.getPageMyPatient().getTextAreaPatientNote());
 			webElementSendKeys(pages.getPageMyPatient().getTextAreaPatientNote(), "Sample Test Note");
 			webElementClick(pages.getPageMyPatient().getButtonSave());
-
 		}
 		catch (Exception exception) {
 			throw new Exception("Unable to add note on patient profile" + "\n" + exception.getMessage());
@@ -92,7 +91,6 @@ public class Steps_MyPatient extends Base {
 			throw new AssertionError("Cannot view patient tabs" + "\n" + exception.getMessage());
 		}
 	}
-
 	@Then("^sees feedback success message is displayed$")
 	public void sees_feedback_success_message_is_displayed() throws Throwable {
 		try {
@@ -104,7 +102,6 @@ public class Steps_MyPatient extends Base {
 			throw new AssertionError("Patient Note was not successfully saved" + "\n" + exception.getMessage());
 		}
 	}
-
 	@Then("^page is redirected back to the notes list$")
 	public void page_is_redirected_back_to_the_notes_list() throws Throwable {
 		try {

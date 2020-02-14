@@ -50,7 +50,7 @@ public class Steps_ClinicianDetails extends Base {
 			}
 		}
 		catch (AssertionError exception) {
-			throw new Exception("Cannot cancel confirmation message" + "\n" + exception.getMessage());
+			throw new AssertionError("Cannot cancel confirmation message" + "\n" + exception.getMessage());
 		}
 	}
 

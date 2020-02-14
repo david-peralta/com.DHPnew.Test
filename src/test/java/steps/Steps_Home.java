@@ -192,7 +192,11 @@ public class Steps_Home extends Base {
 	@Then("^link to the users page is not displayed$")
 	public void link_to_the_users_page_is_not_displayed() throws Throwable {
 		try {
-			Assert.assertTrue(!isWebElementDisplayed(pages.getPageHome().getButtonUsers()));
+			actionSendKeys(Keys.chord(Keys.PAGE_UP));
+			actionSendKeys(Keys.chord(Keys.PAGE_UP));
+			Thread.sleep(2000);
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroText()));
+			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroSubText()));
 		}
 		catch (AssertionError exception) {
 			throw new AssertionError("The link to the users page is displayed." + "\n" + exception.getMessage());
@@ -202,14 +206,13 @@ public class Steps_Home extends Base {
 	@Then("^checks hero text is displayed$")
 	public void checks_hero_text_is_displayed() throws Throwable {
 		try {
-			actionSendKeys(Keys.chord(Keys.PAGE_UP));
-			actionSendKeys(Keys.chord(Keys.PAGE_UP));
-			Thread.sleep(2000);
+			scrollToWebElement(pages.getPageHome().getHeaderHeroText());
+			Thread.sleep(5000);
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroText()));
 			Assert.assertTrue(isWebElementDisplayed(pages.getPageHome().getHeaderHeroSubText()));
 		}
 		catch (AssertionError exception) {
-			throw new AssertionError("The link to the users page is displayed." + "\n" + exception.getMessage());
+			throw new AssertionError("Hero page is not displayed" + "\n" + exception.getMessage());
 		}
 	}
 }

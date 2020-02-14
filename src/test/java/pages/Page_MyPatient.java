@@ -47,8 +47,10 @@ public class Page_MyPatient extends Base {
 	private WebElement textarea_PatientNote;
 	@FindBy(xpath = "//span[contains(text(),'Patient note successfully saved!')]")
 	private WebElement message_NoteAdded;
-	// @FindBy(xpath = "(//span[contains(text(),'07/02/20')]//ancestor::tr])[1]")
-	@FindBy(xpath = "//span[contains(text(),'13/02/20')]//ancestor::tr//following::span[contains(text(),'Sample Test Note')]")
+	// @FindBy(xpath =
+	// "//span[contains(text(),'13/02/20')]//ancestor::tr//following::span[contains(text(),'Sample
+	// Test Note')]")
+	@FindBy(xpath = "(//span[@class='users-head'])[5]")
 	private WebElement row_FirstData;
 
 	// ############################################## Return Page Objects ###############################################

@@ -307,7 +307,7 @@ public class Steps_Settings extends Base {
 			}
 		}
 		catch (Exception exception) {
-			throw new Exception("Unable to toggle off health indicator option" + "\n" + exception.getMessage());
+			throw new Exception("Unable to toggle on health indicator option" + "\n" + exception.getMessage());
 		}
 	}
 
@@ -539,7 +539,7 @@ public class Steps_Settings extends Base {
 			scrollToWebElement(pages.getPageSettings().getButtonSave());
 			if (!isWebElementDisplayed(pages.getPageSettings().getNeedsToggleON())) {
 				webElementClick(pages.getPageSettings().getNeedsToggle());
-				Thread.sleep(5000);
+				waitUntilWebElementVisible(pages.getPageSettings().getNeedsToggleON());
 				webElementClick(pages.getPageSettings().getButtonSave());
 				Thread.sleep(5000);
 			}
@@ -774,6 +774,31 @@ public class Steps_Settings extends Base {
 		}
 	}
 
+	@When("^user disable assessment in the general settings page$")
+	public void user_disable_assessment_in_the_general_settings_page() throws Throwable {
+		try {
+			scrollToWebElement(pages.getPageSettings().getButtonSave());
+			isWebElementDisplayed(pages.getPageSettings().getToggleONHealthIndicator());
+			if (isXPathNotExisting("//input[contains(@id,'Chk_Assessment') and @checked='checked']")) {
+				scrollToWebElement(pages.getPageSettings().getButtonSave());
+				Thread.sleep(5000);
+				webElementClick(pages.getPageSettings().getButtonSave());
+				Thread.sleep(5000);
+			}
+			else {
+				webElementClick(pages.getPageSettings().getToggleAssessment());
+				Thread.sleep(5000);
+				scrollToWebElement(pages.getPageSettings().getButtonSave());
+				Thread.sleep(5000);
+				webElementClick(pages.getPageSettings().getButtonSave());
+				Thread.sleep(5000);
+			}
+		}
+		catch (Exception exception) {
+			throw new Exception("Unable to toggle off assessment option" + "\n" + exception.getMessage());
+		}
+	}
+
 	// ################################################## Then Steps ###################################################
 	@Then("^user checks if horizontal tabs on settings page is complete$")
 	public void user_checks_if_horizontal_tabs_on_settings_page_is_complete() throws Throwable {
@@ -1000,6 +1025,18 @@ public class Steps_Settings extends Base {
 		}
 		catch (Exception exception) {
 			throw new Exception("Unable to locate clinic visit option" + "\n" + exception.getMessage());
+		}
+	}
+
+	@Then("^assessment settings was disabled$")
+	public void assessment_settings_was_disabled() throws Throwable {
+		try {
+			scrollToWebElement(pages.getPageSettings().getButtonSave());
+			isXPathNotExisting("//input[contains(@id,'Chk_Assessment') and @checked='checked']");
+
+		}
+		catch (Exception exception) {
+			throw new Exception("Unable to toggle off assessment option" + "\n" + exception.getMessage());
 		}
 	}
 

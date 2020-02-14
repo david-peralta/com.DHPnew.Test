@@ -6,17 +6,26 @@ Feature: DHP-32: As a Configuration Manager, I should be able to deactivate Clin
     Given the config manager is on the configuration setting page
     Then user checks if horizontal tabs on settings page is complete
 
-  @DHP32B1 
+  @End
+  Scenario: Close web browser
+
+  @DHP32B1
   Scenario: 02: Configuration Mgr. disable the video conference for appointments
     Given the config manager is on the configuration setting page
     When user disables the video conferencing option
     Then sees button video conferencing option status
-    
-  @DHP32B2 
+
+  @End
+  Scenario: Close web browser
+
+  @DHP32B2
   Scenario: 03: Configuration Mgr. enables the video conference for appointments
     Given the config manager is on the configuration setting page
     When user enables the video conferencing option
     Then sees button video conferencing option status
+
+  @End
+  Scenario: Close web browser
 
   @DHP32C
   Scenario: 04: Configuration Mgr. clicks on save without changing anything
@@ -24,25 +33,34 @@ Feature: DHP-32: As a Configuration Manager, I should be able to deactivate Clin
     When user clicks on save without making any changes
     Then sees message that it is saved successfully
 
+  @End
+  Scenario: Close web browser
+
   @DHP32D1
   Scenario: 05a: Configuration Mgr. clicks on cancel after making some changes
     Given the config manager is on the configuration setting page
     When user switches videoconferencing option
-		And user clicks on confirm unsaved changes
+    And user clicks on confirm unsaved changes
     Then the web browser is on "ClinicianManagers" page
-	
-	@DHP32D2
-	Scenario: 05b: Configuration Mgr. clicks on cancel after making some changes
+
+  @End
+  Scenario: Close web browser
+
+  @DHP32D2
+  Scenario: 05b: Configuration Mgr. clicks on cancel after making some changes
     Given the config manager is on the configuration setting page
     When user switches videoconferencing option
-		And user clicks on cancel on unsaved changes
-		Then the web browser is on "Settings" page
+    And user clicks on cancel on unsaved changes
+    Then the web browser is on "Settings" page
+
+  @End
+  Scenario: Close web browser
 
   @DHP32E
   Scenario: 06: Configuration Mgr. clicks on cancel with no unsaved changes
     Given the config manager is on the configuration setting page
-		When user clicks on cancel with no changes
+    When user clicks on cancel with no changes
     Then the web browser is on "Settings" page
- 
+
   @End
   Scenario: Close web browser

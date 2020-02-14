@@ -45,6 +45,7 @@ public class Page_Home extends Base {
 
 	@FindBy(xpath = "//div[text()='Welcome to PROSTMATE']")
 	private WebElement header_HeroText;
+	// @FindBy(xpath = "//div[text()='Quality Care that's all about You']")
 	@FindBy(xpath = "//div[contains(text(),'Quality Care')]")
 	private WebElement header_HeroSubText;
 

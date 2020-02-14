@@ -7,20 +7,29 @@ Feature: DHP-18: As a Configuration Manager, I should be able to deactivate Clin
     When user clicks a clinicians manager
     Then sees clinician manager status
 
+  @End
+  Scenario: Close web browser
+
   @DHP18B1
   Scenario: 02a: Configuration Manager cancels a Clinician Manager
     Given that user logins with "Config Manager"
     When user clicks a clinicians manager
-   	And user cancels on confirmation mesage
+    And user cancels on confirmation mesage
     Then sees clinician manager status
-    
+
+  @End
+  Scenario: Close web browser
+
   @DHP18B2
   Scenario: 02b: Configuration Manager deactivates a Clinician Manager account
-  	Given that user logins with "Config Manager"
+    Given that user logins with "Config Manager"
     When user clicks a clinicians manager
-   	And user clicks on clinician to deactivate
+    And user clicks on clinician to deactivate
     Then sees clinician manager status
-  	
+
+  @End
+  Scenario: Close web browser
+
   @DHP18C
   Scenario: 03: Configuration Manager views the status of Clinician Manager from the list view
     Given that user logins with "Config Manager"

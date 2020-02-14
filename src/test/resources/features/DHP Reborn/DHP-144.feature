@@ -6,12 +6,15 @@ Feature: DHP-144: As a Configuration Manager, I want to enable/disable the Needs
     Given the config manager is viewing the assessment settings
     Then sees needs assessment option
 
+  @End
+  Scenario: Close web browser
+
   @DHP144B
   Scenario: 02: Configuration Manager saves their changes
     Given the config manager is viewing the assessment settings
     When they disable or enable the needs assessment
     Then sees message that it is saved successfully
     And the web browser is on "Settings" page
- 
-  @DHP144B
+
+  @End
   Scenario: Close web browser

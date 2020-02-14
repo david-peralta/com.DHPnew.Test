@@ -101,13 +101,17 @@ public class Page_MyInfo extends Base {
 	private WebElement label_FourthPagePhysicalActivity;
 	@FindBy(xpath = "(//div[text()='Physical Activity'])[1]")
 	private WebElement label_PhysicalActivityQuestions;
-
+	@FindBy(xpath = "//div[text()='Patients']")
+	private WebElement label_DoctorPatientTab;
 	@FindBy(xpath = "//div[text()='Assessments']")
 	private WebElement menubar_Assessments;
 
 	// ################################################## Return Page Objects ##################################################
 	public WebElement getPSATabOnMyInfoPage() {
 		return getPSATabOnMyInfoPage;
+	}
+	public WebElement getDoctorPatientTab() {
+		return label_DoctorPatientTab;
 	}
 
 	public WebElement getWellnessCheckTabOnMyInfoPage() {

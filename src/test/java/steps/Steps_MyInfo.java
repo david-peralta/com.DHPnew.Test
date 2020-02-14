@@ -84,7 +84,7 @@ public class Steps_MyInfo extends Base {
 			webElementSendKeys(pages.getPageLogin().getInputEmailAddress(), properties.getProperty("clinicia@doctor.com"));
 			webElementSendKeys(pages.getPageLogin().getInputUserPassword(), properties.getProperty("PatientPassword"));
 			webElementClick(pages.getPageLogin().getButtonLogin());
-			webElementClick(pages.getPageMyInfo().getWellnessCheckTab());
+			webElementClick(pages.getPageMyInfo().getDoctorPatientTab());
 			Thread.sleep(1000);
 		}
 		catch (AssertionError exception) {
@@ -444,7 +444,7 @@ public class Steps_MyInfo extends Base {
 	public void info_type_dropdown_options_are_complete() throws Throwable {
 		try {
 			String infoTypes[] = { "Please select", "Appointments", "Decisions", "Journal", "PSA", "To Do", "Treatment", "Other" };
-			checkDropdownOptionsAvailable(pages.getPageMyInfo().getDropdownInfoType(), infoTypes);
+			checkWebElementDropdownOptions(pages.getPageMyInfo().getDropdownInfoType(), infoTypes);
 		}
 		catch (Exception exception) {
 			throw new Exception("Info type dropdown options is incomplete." + "\n" + exception.getMessage());
@@ -455,7 +455,7 @@ public class Steps_MyInfo extends Base {
 	public void psa_menu_on_info_type_dropdown_is_hidden() throws Throwable {
 		try {
 			String infoTypes[] = { "Please select", "Appointments", "Decisions", "Journal", "To Do", "Treatment", "Other" };
-			checkDropdownOptionsAvailable(pages.getPageMyInfo().getDropdownInfoType(), infoTypes);
+			checkWebElementDropdownOptions(pages.getPageMyInfo().getDropdownInfoType(), infoTypes);
 		}
 		catch (Exception exception) {
 			throw new Exception("PSA menu is not hidden" + "\n" + exception.getMessage());

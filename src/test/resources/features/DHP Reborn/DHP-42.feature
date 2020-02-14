@@ -24,11 +24,13 @@ Feature: DHP-42: As a Configuration Manager, I want to login to the DB Health Pl
     And user clicks login button on login page
     And feedback error message for invalid password is displayed
 
+  @End
+  Scenario: Close web browser
+
   Scenario: 5: Valid Credentials Entered
     Given the user is on configuration managers landing page
     Then the web browser is on "ClinicianManagers" page
     And profile name with caret down icon is displayed on the profile menu corner
-    
 
   @End
   Scenario: Close web browser

@@ -6,6 +6,9 @@ Feature: DHP-52: As a clinician, the health assessment box of patients should be
     When user clicks on settings menubar
     Then user toggles off Enable assessment option on settings page
 
+  @End
+  Scenario: Close web browser
+
   Scenario: 1b: Clinician views a patient's profile
     Given the clinician is on the patient's profile page
     When user clicks on a specific patient

@@ -6,6 +6,9 @@ Feature: DHP-50: As a patient, I want the link to "Assessments" hidden that is p
     When user clicks on settings menubar
     Then user toggles off Enable assessment option on settings page
 
+  @End
+  Scenario: Close web browser
+
   Scenario: 1b: Patient views the left menu bar
     Given the user is on patient landing page
     Then the link to the assessments in the left menu bar should be hidden

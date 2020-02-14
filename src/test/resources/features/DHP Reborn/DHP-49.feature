@@ -4,18 +4,26 @@ Feature: DHP-49: As a patient, I want the dropdown option 'PSA' hidden under 'my
   Scenario: 1a: Toggle ON PSA
     Given the user is on configuration managers landing page
     When user clicks on settings menubar
-    Then user enables PSA toggle on info type settings page
-    And user toggles on health indicator option on settings page
+    Then user toggles on health indicator option on settings page
+
+  @End
+  Scenario: Close web browser
 
   Scenario: 1b: Patient adds an info type under their timeline when "Enable PSA" is toggled on for their instance
     Given the user is on patient landing page
     When user clicks on add info button on my info page
     Then info type dropdown options are complete
 
+  @End
+  Scenario: Close web browser
+
   Scenario: 2a: Toggle OFF PSA
     Given the user is on configuration managers landing page
     When user clicks on settings menubar
     Then user disables PSA toggle on info type settings page
+
+  @End
+  Scenario: Close web browser
 
   Scenario: 2b: Clinician views a patient's profile  when "Enable PSA" is toggled off for their instance
     Given the user is on patient landing page

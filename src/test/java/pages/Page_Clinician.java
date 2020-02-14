@@ -42,7 +42,7 @@ public class Page_Clinician extends Base {
 	private WebElement menubar_Patients;
 	@FindBy(xpath = "//a[text()='demeth']")
 	private WebElement link_DemethPatient;
-	@FindBy(xpath = "//input[contains(text(),'InputSearchName')]")
+	@FindBy(xpath = "//input[contains(@id,'InputSearchName')]")
 	private WebElement field_Search;
 	@FindBy(xpath = "//input[contains(@id,'btn_Search')]")
 	private WebElement button_Search;
@@ -81,8 +81,52 @@ public class Page_Clinician extends Base {
 
 	@FindBy(xpath = "//div[contains(@id,'ctn__Search')]//input[contains(@id,'inputSearch')]")
 	private WebElement input_SearchField;
-
+	@FindBy(xpath = "//input[@value='Create Clinician']")
+	private WebElement button_CreateClinician;
+	@FindBy(xpath = "//div[contains(@id,'Title')]//span[text()='Clinicians']")
+	private WebElement label_ClinicianHeader;
+	@FindBy(xpath = "//div[contains(@id,'Label') and text()='Clinicians']")
+	private WebElement menu_ClinicianLink;
+	@FindBy(xpath = "//div[contains(@id,'Label') and text()='My Resources']")
+	private WebElement menu_ResourcesLink;
+	@FindBy(xpath = "//div[contains(@id,'Label') and text()='Logout']")
+	private WebElement menu_LogoutLink;
+	@FindBy(xpath = "//input[@value='Anxiety']")
+	private WebElement radioBtn_AnxietyGraph;
+	@FindBy(xpath = "//input[@value='Depression']")
+	private WebElement radioBtn_DepressionGraph;
+	@FindBy(xpath = "//input[@value='Distress']")
+	private WebElement radioBtn_DistressGraph;
+	@FindBy(xpath = "//div[text()='Needs']")
+	private WebElement label_AnswersOfNeedsQuestionnaire;
+	@FindBy(xpath = "//span[contains(text(),'Depression - ')]")
+	private WebElement label_AnswersOfDepressionQuestionnaire;
+	@FindBy(xpath = "//span[contains(text(),'Anxiety - ')]")
+	private WebElement label_AnswersOfAnxietyQuestionnaire;
+	@FindBy(xpath = "//span[text()='Physical Activity']")
+	private WebElement label_AnswersOfPhysicalActivityQuestionnaire;
 	// ############################################## Return Page Objects ###############################################
+	public WebElement getAnswersOfPhysicalActivityQuestionnaire() {
+		return label_AnswersOfPhysicalActivityQuestionnaire;
+	}
+	public WebElement getAnswersOfAnxietyQuestionnaire() {
+		return label_AnswersOfAnxietyQuestionnaire;
+	}
+	public WebElement getAnswersOfDepressionQuestionnaire() {
+		return label_AnswersOfDepressionQuestionnaire;
+	}
+	public WebElement getAnswersOfNeedsQuestionnaire() {
+		return label_AnswersOfNeedsQuestionnaire;
+	}
+	public WebElement getAnxietyGraphRadioBtn() {
+		return radioBtn_AnxietyGraph;
+	}
+	public WebElement getDistressGraphRadioBtn() {
+		return radioBtn_DistressGraph;
+	}
+	public WebElement getDepressionGraphRadioBtn() {
+		return radioBtn_DepressionGraph;
+	}
 	public WebElement getClinicianManagers() {
 		return header_ClinicianManagers;
 	}
@@ -161,5 +205,21 @@ public class Page_Clinician extends Base {
 
 	public WebElement getInputSearchField() {
 		return input_SearchField;
+	}
+	public WebElement getCreateClinicianButton() {
+		return button_CreateClinician;
+	}
+	
+	public WebElement getClinicianHeader() {
+		return label_ClinicianHeader;
+	}
+	public WebElement getClinicianMenuLink() {
+		return menu_ClinicianLink;
+	}
+	public WebElement getClinicianResourcesLink() {
+		return menu_ResourcesLink;
+	}
+	public WebElement getClinicianLogoutLink() {
+		return menu_LogoutLink;
 	}
 }
